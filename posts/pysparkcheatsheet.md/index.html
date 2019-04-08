@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content="  &middot;  My New Hugo Site" />
+  	<meta property="og:site_name" content="My New Hugo Site" />
+  	<meta property="og:url" content="/posts/pysparkcheatsheet.md/" />
+    
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+
+    
+    
+
+  <title>
+      &middot;  My New Hugo Site
+  </title>
+
+    <meta name="description" content="this is my description" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.54.0" />
+
+    <link rel="canonical" href="/posts/pysparkcheatsheet.md/" />
+
+    
+<div id="particles-js"></div>
+<script src="/js/particles.min.js"></script>
+<script src="/js/particles.js"></script>   
+</head>
+<body class="nav-closed">
+
+  
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header " style="background-image: url(/images/user.jpg)">
+
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="blog-logo" href="/"><img src="/images/user.png" alt="Blog Logo" /></a>
+        
+        
+    </nav>
+<div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">
+              <a class="btn-bootstrap-2" href="#content">My New Hugo Site</a>
+          </h1>
+          <h2 class="page-description">this is my description</h2>
+        </div>
+</div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+  <main id="content" class="content" role="main">
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title"></h1>
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h2 id="pyspark">Pyspark</h2>
+
+<h3 id="1-initilaztion">1. initilaztion</h3>
+
+<h4 id="1-spark-session">1. spark session</h4>
+
+<pre><code class="language-Python">from pyspark.sql import SparkSession  
+spark = SparkSession \
+    .builder \
+    .appName(&quot;name&quot;) \
+    .config(&quot;spark.some.config.option&quot;, &quot;some-value&quot;) \
+    .getOrCreate()
+</code></pre>
+
+<h4 id="2-spark-context">2. spark context</h4>
+
+<h5 id="1-from-spark-session">1. from spark session</h5>
+
+<pre><code class="language-Python">sc = spark.sparkContext
+</code></pre>
+
+<h5 id="2-from-spark-context">2. from spark context</h5>
+
+<pre><code class="language-Python">conf = SparkConf().setAppName(&quot;KMeans&quot;).setMaster(&quot;local[*]&quot;)  
+sc = SparkContext(conf =conf)  
+or  
+sc = SparkContext.getOrCreate(conf)
+</code></pre>
+
+<h3 id="2-paritition-by-index">2. paritition by index</h3>
+
+<pre><code class="language-Python">.mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)\
+this get rid of the first line(rdd) in the file. 
+</code></pre>
+
+<h3 id="3-opeartions-of-spark-dataframe">3. opeartions of spark dataframe</h3>
+
+<h4 id="1-read-csv-file-into-dataframe-with-separator">1. read csv file into dataframe, with separator</h4>
+
+<pre><code class="language-Python">from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName(&quot;Python Spark SQL basic example&quot;) \
+    .config(&quot;spark.some.config.option&quot;, &quot;some-value&quot;) \
+    .getOrCreate()
+
+  df_demand = spark.read\
+        .format(&quot;com.databricks.spark.csv&quot;)\
+        .option(&quot;header&quot;, &quot;true&quot;)\
+        .option(&quot;inferSchema&quot;, &quot;true&quot;)\
+        .option(&quot;mode&quot;, &quot;DROPMALFORMED&quot;)\
+        .option(&quot;delimiter&quot;, &quot;|&quot;)\
+        .load(demand_data)
+</code></pre>
+
+<h4 id="2-basic-operations">2. Basic Operations</h4>
+
+<p><a href="https://www.analyticsvidhya.com/blog/2016/10/spark-dataframe-and-operations/">https://www.analyticsvidhya.com/blog/2016/10/spark-dataframe-and-operations/</a></p>
+
+<h4 id="3-read-dictionary-into-spark-dataframe">3. read dictionary into spark dataframe</h4>
+
+<ol>
+<li>dict -&gt; pandas.df -&gt; spark.df<br />
+<a href="https://stackoverflow.com/questions/43751509/how-to-create-new-dataframe-with-dict?rq=1">https://stackoverflow.com/questions/43751509/how-to-create-new-dataframe-with-dict?rq=1</a><br /></li>
+<li>dict -&gt; spark.rdd (json rdd) -&gt; json parser -&gt; spark.df<br />
+<a href="https://stackoverflow.com/questions/51774796/how-to-convert-dictionary-to-data-frame-in-pyspark">https://stackoverflow.com/questions/51774796/how-to-convert-dictionary-to-data-frame-in-pyspark</a><br /></li>
+</ol>
+
+<p>Note:
+when use pandas df to create spark df, if you want to perserve indices,<br />
+use: spark_df = spark.createDataFrame(pandasdf.reset_index(drop=False))<br />
+must have reset_index(drop=False) to preserve indices, as spark SQL has no concept of index</p>
+
+<h4 id="3-unique-value-of-a-column">3. Unique value of a column</h4>
+
+<p>select(&ldquo;col name&rdquo;).distinct()
+.drop(&ldquo;col name&rdquo;)</p>
+
+<h4 id="4-drop-col">4. drop col</h4>
+
+<p>.drop(&ldquo;col name&rdquo;)</p>
+
+<h4 id="5-spark-df-to-pandas-df">5. spark df to pandas df</h4>
+
+<p>.toPandas() # cost is expensive, try to minimum use it! it&rsquo;s an action, collect all the data to the driver</p>
+
+<h4 id="6-sort-by-col-descending">6.sort by col, (descending)</h4>
+
+<p>from pyspark.sql.functions import desc</p>
+
+<p>(group_by_dataframe
+    .count()
+    .filter(&rdquo;<code>count</code> &gt;= 10&rdquo;)
+    .sort(desc(&ldquo;count&rdquo;))<br />
+OR<br />
+.orderBy(&lsquo;Year&rsquo;, ascending=False)</p>
+
+<h4 id="7-filter">7. filter</h4>
+
+<p>In pyspark, filter on dataframe doesn&rsquo;t take functions that returns a boolean,<br />
+it only takes SQL experssion that returns a boolean<br />
+If you want it to take a boolean function, use udf, sample:</p>
+
+<pre><code class="language-Python">@F.udf(returnType=BooleanType())
+def my_filter(col):
+    func
+    return Boolean
+  
+df.filter(my_filter('col')).show()
+Make sure includes:
+from pyspark.sql import functions as F
+from pyspark.sql.types import BooleanType
+</code></pre>
+
+<h4 id="8-map-on-column">8. map on column</h4>
+
+<p>df.withColumn(&lsquo;new column&rsquo;, udf(&lsquo;old column&rsquo;)))</p>
+
+<h4 id="9-coalesce-and-repartition">9. coalesce and repartition</h4>
+
+<p>repartition(n) = coalesce(n, shuffle = true)</p>
+
+<h3 id="4-wide-dependency-and-narrow-dependency">4. Wide dependency and narrow dependency,</h3>
+
+<p>Orgin we have M partitions, we repartiton to N partitions.<br />
+narrow dependency, usually we have M &gt; N, like Map, doesn&rsquo;t triger shuffle<br />
+when M is greatly larger than N, it&rsquo;s better to manually triger shuffle, otherwise<br />
+it affects parallelization and performance.</p>
+
+<p>Wide dependency, usually we have M &lt; N, like Join, groupByKey, triger shuffle</p>
+
+<h3 id="5-inferschema-dependency">5. Inferschema dependency:</h3>
+
+<p>NullType<br />
+IntegerType<br />
+LongType<br />
+DecimalType<br />
+DoubleType<br />
+TimestampType<br />
+BooleanType<br />
+StringType
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTg3NDgyNzE0Nl19
+--></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+
+        <a class="img" href="/" style="background-image: url(/images/user.png)"><span class="hidden">syui</span></a>
+    </figure>
+    
+
+    <section class="author">
+
+  <p>syui</p>
+  
+
+</section>
+
+
+    
+    <section class="share">
+      <h4>Share this posts</h4>
+      <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=&amp;url=%2fposts%2fpysparkcheatsheet.md%2f"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <span class="hidden">Twitter</span>
+      </a>
+      <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fposts%2fpysparkcheatsheet.md%2f"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <span class="hidden">Facebook</span>
+      </a>
+      <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fposts%2fpysparkcheatsheet.md%2f"
+         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <span class="hidden">Google+</span>
+      </a>
+    </section>
+    
+
+    
+    
+    
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">My New Hugo Site</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="https://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/syui/hugo-theme-air">hugo-theme-air</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+
+</body>
+</html>
+
