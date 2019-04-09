@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Generic Python"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Generic Python &middot; Hello, World" />
+  	<meta property="og:site_name" content="Hello, World" />
+  	<meta property="og:url" content="/post/pythoncheatsheet/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-04-08T00:00:00Z" />
+
+    
+    
+
+    <title>Generic Python &middot; Hello, World</title>
+
+    
+    <meta name="description" content="1. Open file, read, write Open: f = open(“hello.text”, flag), flag: &#39;r&#39; = read, &#39;b&#39; = binary, &#39;w&#39; = write read sing line: f.readline() read a list of lines: f.r" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hello, World" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.54.0" />
+
+    <link rel="canonical" href="/post/pythoncheatsheet/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": /images/user.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": /images/user.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": https://syui.github.io/hugo-theme-air,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": Generic Python,
+    "name": Generic Python,
+    "wordCount": 176,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": /post/pythoncheatsheet/,
+    "datePublished": 2019-04-08T00:00Z,
+    "dateModified": 2019-04-08T00:00Z,
+    
+    
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": /post/pythoncheatsheet/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+     
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://Keybase.io/vjeantet">Keybase (secure msg)</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://flipboard.com/@vjeantet">Flipboard magazines</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/vjeantet">Twitter timeline</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/vjeantet">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/user.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Generic Python</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2019-04-08T00:00:00Z">
+            Apr 8, 2019
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<h1 id="1-open-file-read-write">1. Open file, read, write</h1>
+
+<pre><code class="language-Python">Open: f = open(“hello.text”, flag), flag: 'r' = read, 'b' = binary, 'w' = write
+read sing line:
+f.readline() 
+read a list of lines:
+f.readlines()
+read whole file as string:
+f.read()
+</code></pre>
+
+<h1 id="2-read-from-stdin">2.  Read from stdin</h1>
+
+<pre><code class="language-Python">import sys
+for line in sys.stdin.readlines():
+	#convert each line from a string to a list of integer
+	line_list = (map(int, line.split()))
+</code></pre>
+
+<h4 id="2-look-up-table-of-element-origin-index-the-sorted-index">2.  look up table of element, origin index -&gt; the sorted index</h4>
+
+<pre><code class="language-Python">idx = np.argsort()
+lut = np.zeros_like(idx)  
+lut[idx] = np.arange(len(origin_list))
+
+lut[origin_index] = sorted_index
+</code></pre>
+
+<h4 id="3-load-object-and-save-object">3. load object and save object</h4>
+
+<pre><code class="language-Python">def save_obj(obj, name ):
+    with open('obj/'+ name + '.pkl', 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+def load_obj(name ):
+    with open('obj/' + name + '.pkl', 'rb') as f:
+        return pickle.load(f)
+</code></pre>
+
+<h4 id="4">4.</h4>
+
+<pre><code class="language-Python">difference between list[0,1,2,3,4] and range(0,5) in python 3.0+
+difference between range(0,5) and xrange(0,5) in python before 3.0)
+
+the former one needs to allocate the actuall space on memory, the later one doesn't have to.
+The later ones returns a range object( a iterable object similar to iteratorbut allows random access), so allocate memory on demand.
+</code></pre>
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTA2NTk4MDQ1NCwxNjI1NTQwMjAyLDExOT
+M1MTkzODBdfQ==
+-->
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="/" style="background-image: url(/images/user.png)"><span class="hidden">J's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="/">J</a></h4>
+  
+  <p>Read <a href="/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    <span class="author-link icon-link"><a href="https://syui.github.io/hugo-theme-air">https://syui.github.io/hugo-theme-air</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Generic%20Python&nbsp;-&nbsp;Hello%2c%20World&amp;url=%2fpost%2fpythoncheatsheet%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fpythoncheatsheet%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpythoncheatsheet%2f&amp;description=Generic%20Python"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fpythoncheatsheet%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/pandascheatsheet/">
+          <section class="post">
+              <h2>Pandas Cheat Sheet</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Hello, World</a> </section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
