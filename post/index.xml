@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Generic Python</title>
-      <link>/post/pythoncheatsheet/</link>
+      <title>Difference between Multi-Processing, Multi-threading and Coroutine</title>
+      <link>/post/tcp/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/pythoncheatsheet/</guid>
-      <description>1. Open file, read, write Open: f = open(“hello.text”, flag), flag: &#39;r&#39; = read, &#39;b&#39; = binary, &#39;w&#39; = write read sing line: f.readline() read a list of lines: f.readlines() read whole file as string: f.read()  2. Read from stdin import sys for line in sys.stdin.readlines(): #convert each line from a string to a list of integer line_list = (map(int, line.split()))  2. look up table of element, origin index -&amp;gt; the sorted index idx = np.</description>
+      <guid>/post/tcp/</guid>
+      <description>How is a computer program executed? A program needs at least one thread, one process, one core, one CPU to run on. A thread lives in process, a process lives in core, a core lives in a CPU.
+multi-core CPU vs Multi-CPU  In a same CPU, there can be multiple cores. Different cores work together and share resources. Across different CPUs there could be also multiple cores, but usually not a good practice because some resources are not shared.</description>
     </item>
     
     <item>
@@ -39,6 +40,15 @@
       
       <guid>/post/pysparkcheatsheet/</guid>
       <description>1. initilaztion 1. spark session from pyspark.sql import SparkSession spark = SparkSession \ .builder \ .appName(&amp;quot;name&amp;quot;) \ .config(&amp;quot;spark.some.config.option&amp;quot;, &amp;quot;some-value&amp;quot;) \ .getOrCreate()  2. spark context 1. from spark session sc = spark.sparkContext  2. from spark context conf = SparkConf().setAppName(&amp;quot;KMeans&amp;quot;).setMaster(&amp;quot;local[*]&amp;quot;) sc = SparkContext(conf =conf) or sc = SparkContext.getOrCreate(conf)  2. paritition by index .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)\ this get rid of the first line(rdd) in the file.</description>
+    </item>
+    
+    <item>
+      <title>Python CheatSheet</title>
+      <link>/post/pythoncheatsheet/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pythoncheatsheet/</guid>
+      <description>This cheatsheet includes some very basic but easy to forget operations and some random notes. A good tutorial for beginner in Chinese 1. Decorator Syntax def decorator(func): def new_func(*args, **argkw): #add stuff print(&amp;quot;Hello World&amp;quot;) return func(*args, **argkw) return new_func @decorator def f(args): pass #run function f f() #result: #Hello World  2. Open file, read, write Open: f = open(“hello.text”, flag), flag: &#39;r&#39; = read, &#39;b&#39; = binary, &#39;w&#39; = write read sing line: f.</description>
     </item>
     
     <item>
@@ -82,16 +92,6 @@ Support sentence, word, for 17 languages source code for sentence tokenizer: ``p
       <guid>/post/stackeditcheatsheet/</guid>
       <description>Welcome to StackEdit! Hi! I&amp;rsquo;m your first Markdown file in StackEdit. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the file explorer on the left corner of the navigation bar.
 Files StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible offline!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/tcp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tcp/</guid>
-      <description> title: &amp;ldquo;Difference between Multi-Processing, Multi-threading and Coroutine&amp;rdquo; date: 2019-04-08
-What is a process For distributing What is a thread Advantage What is a Coroutine Why we prefer coroutine in Python Tornado, Greentlet, Gevent </description>
     </item>
     
   </channel>

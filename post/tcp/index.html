@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content=""/>
+<meta name="twitter:title" content="Difference between Multi-Processing, Multi-threading and Coroutine"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content=" &middot; Hello World, This Is J" />
+  	<meta property="og:title" content="Difference between Multi-Processing, Multi-threading and Coroutine &middot; Hello World, This Is J" />
   	<meta property="og:site_name" content="Hello World, This Is J" />
   	<meta property="og:url" content="/post/tcp/" />
 
@@ -29,16 +29,15 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="0001-01-01T00:00:00Z" />
+    <meta property="article:published_time" content="2019-04-08T00:00:00Z" />
 
     
     
 
-    <title> &middot; Hello World, This Is J</title>
+    <title>Difference between Multi-Processing, Multi-threading and Coroutine &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content=" title: &amp;ldquo;Difference between Multi-Processing, Multi-threading and Coroutine&amp;rdquo; date: 2019-04-08
-What is a process For distributing What is a thread Ad" />
+    <meta name="description" content="How is a computer program executed? A program needs at least one thread, one process, one core, one CPU to run on. A thread lives in process, a process lives in" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -99,17 +98,17 @@ What is a process For distributing What is a thread Ad" />
             
         ]
     },
-    "headline": ,
-    "name": ,
-    "wordCount": 33,
+    "headline": Difference between Multi-Processing, Multi-threading and Coroutine,
+    "name": Difference between Multi-Processing, Multi-threading and Coroutine,
+    "wordCount": 156,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
     "url": /post/tcp/,
-    "datePublished": 0001-01-01T00:00Z,
-    "dateModified": 0001-01-01T00:00Z,
+    "datePublished": 2019-04-08T00:00Z,
+    "dateModified": 2019-04-08T00:00Z,
     
     
     "description": ,
@@ -196,13 +195,13 @@ What is a process For distributing What is a thread Ad" />
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title"></h1>
+        <h1 class="post-title">Difference between Multi-Processing, Multi-threading and Coroutine</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            Jan 1, 0001
+          <time class="post-date" datetime="2019-04-08T00:00:00Z">
+            Apr 8, 2019
           </time>
         
          
@@ -212,8 +211,21 @@ What is a process For distributing What is a thread Ad" />
     <section class="post-content">
       
 
-<p>title: &ldquo;Difference between Multi-Processing, Multi-threading and Coroutine&rdquo;
-date: 2019-04-08</p>
+<p>How is a computer program executed? A program needs at least one <strong>thread</strong>, one <strong>process</strong>, one <strong>core</strong>, one <strong>CPU</strong> to run on.
+A thread lives in process, a process lives in core, a core lives in a CPU.</p>
+
+<h2 id="multi-core-cpu-vs-multi-cpu">multi-core CPU vs Multi-CPU</h2>
+
+<ul>
+<li>In a same CPU, there can be multiple cores. Different cores work together and share resources.
+Across different CPUs there could be also multiple cores, but usually not a good practice because some resources are not shared.
+For same amount of cores, we usually have a lot better performance gain by putting them in a same CPU. Now for commercial CPU, 16 cores is pretty common. Multi-CPU is usually good for running completely isolated programs (not sharing any data)</li>
+</ul>
+
+<h2 id="concurrent-and-parallel">Concurrent and Parallel</h2>
+
+<p>Concurrent: When
+Parallel: Execution at the same time.</p>
 
 <h2 id="what-is-a-process">What is a process</h2>
 
@@ -227,10 +239,11 @@ date: 2019-04-08</p>
 
 <h3 id="why-we-prefer-coroutine-in-python">Why we prefer coroutine in Python</h3>
 
-<h3 id="tornado-greentlet-gevent">Tornado, Greentlet, Gevent</h3>
+<h3 id="tornado-greenlet-gevent">Tornado, Greenlet, Gevent</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg0MTYwNjBdfQ==
+eyJoaXN0b3J5IjpbLTExNTc4NDQ3MiwtMTIyNjYwMTgzMywtNj
+AxMTM1MjkwLDE5NzgxODgzMTQsNTg0MTYwNjBdfQ==
 -->
 
     </section>
@@ -270,7 +283,7 @@ eyJoaXN0b3J5IjpbNTg0MTYwNjBdfQ==
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2ftcp%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Difference%20between%20Multi-Processing%2c%20Multi-threading%20and%20Coroutine&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2ftcp%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -278,7 +291,7 @@ eyJoaXN0b3J5IjpbNTg0MTYwNjBdfQ==
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2ftcp%2f&amp;description="
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2ftcp%2f&amp;description=Difference%20between%20Multi-Processing%2c%20Multi-threading%20and%20Coroutine"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -306,13 +319,12 @@ eyJoaXN0b3J5IjpbNTg0MTYwNjBdfQ==
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/stackeditcheatsheet/">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/pandascheatsheet/">
           <section class="post">
-              <h2></h2>
-              
+              <h2>Pandas Cheat Sheet</h2>
           </section>
       </a>
-  
   
 </aside>
 

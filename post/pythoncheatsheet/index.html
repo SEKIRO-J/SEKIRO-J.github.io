@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="Generic Python"/>
+<meta name="twitter:title" content="Python CheatSheet"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Generic Python &middot; Hello World, This Is J" />
+  	<meta property="og:title" content="Python CheatSheet &middot; Hello World, This Is J" />
   	<meta property="og:site_name" content="Hello World, This Is J" />
   	<meta property="og:url" content="/post/pythoncheatsheet/" />
 
@@ -34,10 +34,10 @@
     
     
 
-    <title>Generic Python &middot; Hello World, This Is J</title>
+    <title>Python CheatSheet &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="1. Open file, read, write Open: f = open(“hello.text”, flag), flag: &#39;r&#39; = read, &#39;b&#39; = binary, &#39;w&#39; = write read sing line: f.readline() read a list of lines: f.r" />
+    <meta name="description" content="This cheatsheet includes some very basic but easy to forget operations and some random notes. A good tutorial for beginner in Chinese 1. Decorator Syntax def de" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -98,10 +98,10 @@
             
         ]
     },
-    "headline": Generic Python,
-    "name": Generic Python,
-    "wordCount": 176,
-    "timeRequired": "PT1M",
+    "headline": Python CheatSheet,
+    "name": Python CheatSheet,
+    "wordCount": 229,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -195,7 +195,7 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Generic Python</h1>
+        <h1 class="post-title">Python CheatSheet</h1>
         <small></small>
 
         <section class="post-meta">
@@ -211,9 +211,32 @@
     <section class="post-content">
       
 
+<h5 id="this-cheatsheet-includes-some-very-basic-but-easy-to-forget-operations-and-some-random-notes">This cheatsheet includes some very basic but easy to forget operations and some random notes.</h5>
+
+<h5 id="a-good-tutorial-for-beginner-in-chinese-https-gist-github-com-sekiro-j-217f84929b37d40b827abbb1b6796342"><a href="https://gist.github.com/SEKIRO-J/217f84929b37d40b827abbb1b6796342">A good tutorial for beginner in Chinese</a></h5>
+
 <hr />
 
-<h1 id="1-open-file-read-write">1. Open file, read, write</h1>
+<h3 id="1-decorator-syntax">1. Decorator Syntax</h3>
+
+<pre><code class="language-Python">def decorator(func):  
+	def new_func(*args, **argkw):  
+		#add stuff
+		print(&quot;Hello World&quot;)   
+		return func(*args, **argkw)
+return new_func 
+ 
+@decorator  
+def f(args):
+	pass
+
+#run function f
+f()
+#result:
+#Hello World
+</code></pre>
+
+<h3 id="2-open-file-read-write">2. Open file, read, write</h3>
 
 <pre><code class="language-Python">Open: f = open(“hello.text”, flag), flag: 'r' = read, 'b' = binary, 'w' = write
 read sing line:
@@ -224,7 +247,7 @@ read whole file as string:
 f.read()
 </code></pre>
 
-<h1 id="2-read-from-stdin">2.  Read from stdin</h1>
+<h3 id="3-read-from-stdin">3.  Read from stdin</h3>
 
 <pre><code class="language-Python">import sys
 for line in sys.stdin.readlines():
@@ -232,7 +255,7 @@ for line in sys.stdin.readlines():
 	line_list = (map(int, line.split()))
 </code></pre>
 
-<h4 id="2-look-up-table-of-element-origin-index-the-sorted-index">2.  look up table of element, origin index -&gt; the sorted index</h4>
+<h3 id="4-look-up-table-of-element-origin-index-the-sorted-index">4.  look up table of element, origin index -&gt; the sorted index</h3>
 
 <pre><code class="language-Python">idx = np.argsort()
 lut = np.zeros_like(idx)  
@@ -241,7 +264,7 @@ lut[idx] = np.arange(len(origin_list))
 lut[origin_index] = sorted_index
 </code></pre>
 
-<h4 id="3-load-object-and-save-object">3. load object and save object</h4>
+<h3 id="5-load-object-and-save-object">5. load object and save object</h3>
 
 <pre><code class="language-Python">def save_obj(obj, name ):
     with open('obj/'+ name + '.pkl', 'wb') as f:
@@ -252,7 +275,7 @@ def load_obj(name ):
         return pickle.load(f)
 </code></pre>
 
-<h4 id="4">4.</h4>
+<h3 id="6-xrange-and-range">6.   xrange and range</h3>
 
 <pre><code class="language-Python">difference between list[0,1,2,3,4] and range(0,5) in python 3.0+
 difference between range(0,5) and xrange(0,5) in python before 3.0)
@@ -262,8 +285,8 @@ The later ones returns a range object( a iterable object similar to iteratorbut 
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NTk4MDQ1NCwxNjI1NTQwMjAyLDExOT
-M1MTkzODBdfQ==
+eyJoaXN0b3J5IjpbLTY3NTYxODM5NSwtOTM3NjI0Nzk3LDEwNj
+U5ODA0NTQsMTYyNTU0MDIwMiwxMTkzNTE5MzgwXX0=
 -->
 
     </section>
@@ -303,7 +326,7 @@ M1MTkzODBdfQ==
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Generic%20Python&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fpythoncheatsheet%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Python%20CheatSheet&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fpythoncheatsheet%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -311,7 +334,7 @@ M1MTkzODBdfQ==
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpythoncheatsheet%2f&amp;description=Generic%20Python"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpythoncheatsheet%2f&amp;description=Python%20CheatSheet"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -339,10 +362,17 @@ M1MTkzODBdfQ==
 
   <aside class="read-next">
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/post/pandascheatsheet/">
+      <a class="read-next-story" style="no-cover" href="/post/pysparkcheatsheet/">
           <section class="post">
-              <h2>Pandas Cheat Sheet</h2>
+              <h2>Pyspark</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/toolkit/">
+          <section class="post">
+              <h2>Useful tool kit</h2>
           </section>
       </a>
   
