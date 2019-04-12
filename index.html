@@ -279,42 +279,6 @@ multi-core CPU vs Multi-CPU  In a same CPU, there can be multiple cores. Differe
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/pandascheatsheet/">Pandas Cheat Sheet</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> 1. Collect dataframe as dictionary .set_index([&lsquo;a&rsquo;,&lsquo;b&rsquo;]).T.to_dict(&lsquo;list&rsquo;)
-2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
-3. count rows with same value df[col].value_counts()
-4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option('display.expand_frame_repr', False) Other settings: pd.set_option('display.height', 1000) pd.set_option('display.max_rows', 500) pd.set_option('display.max_columns', 500) pd.set_option('display.width', 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &gt; n)   <a class="read-more" href="/post/pandascheatsheet/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            J
-                 
-        
-
-        
-        <time class="post-date" datetime="2019-04-08T00:00:00Z">
-            8 Apr 2019
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/post/pysparkcheatsheet/">Pyspark</a></h2>
     </header>
     <section class="post-excerpt">
@@ -410,6 +374,42 @@ multi-core CPU vs Multi-CPU  In a same CPU, there can be multiple cores. Differe
         
         <time class="post-date" datetime="2019-04-08T00:00:00Z">
             8 Apr 2019
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/pandascheatsheet/">Pandas Cheat Sheet</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 1. Collect dataframe as dictionary .set_index([&lsquo;a&rsquo;,&lsquo;b&rsquo;]).T.to_dict(&lsquo;list&rsquo;)
+2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+3. count rows with same value df[col].value_counts()
+4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option('display.expand_frame_repr', False) Other settings: pd.set_option('display.height', 1000) pd.set_option('display.max_rows', 500) pd.set_option('display.max_columns', 500) pd.set_option('display.width', 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &gt; n)   <a class="read-more" href="/post/pandascheatsheet/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
+            
+            
+            
+            J
+                 
+        
+
+        
+        <time class="post-date" datetime="2018-09-08T00:00:00Z">
+            8 Sep 2018
         </time>
     </footer>
 </article>

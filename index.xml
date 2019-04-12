@@ -22,18 +22,6 @@ multi-core CPU vs Multi-CPU  In a same CPU, there can be multiple cores. Differe
     </item>
     
     <item>
-      <title>Pandas Cheat Sheet</title>
-      <link>/post/pandascheatsheet/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/pandascheatsheet/</guid>
-      <description> 1. Collect dataframe as dictionary .set_index([&amp;lsquo;a&amp;rsquo;,&amp;lsquo;b&amp;rsquo;]).T.to_dict(&amp;lsquo;list&amp;rsquo;)
-2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
-3. count rows with same value df[col].value_counts()
-4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option(&#39;display.expand_frame_repr&#39;, False) Other settings: pd.set_option(&#39;display.height&#39;, 1000) pd.set_option(&#39;display.max_rows&#39;, 500) pd.set_option(&#39;display.max_columns&#39;, 500) pd.set_option(&#39;display.width&#39;, 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &amp;gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &amp;gt; n)  </description>
-    </item>
-    
-    <item>
       <title>Pyspark</title>
       <link>/post/pysparkcheatsheet/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
@@ -61,6 +49,18 @@ multi-core CPU vs Multi-CPU  In a same CPU, there can be multiple cores. Differe
 2. track run time for each line https://pypi.org/project/line_profiler/
 3. regular expression https://docs.python.org/3/library/re.html
 4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/</description>
+    </item>
+    
+    <item>
+      <title>Pandas Cheat Sheet</title>
+      <link>/post/pandascheatsheet/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pandascheatsheet/</guid>
+      <description> 1. Collect dataframe as dictionary .set_index([&amp;lsquo;a&amp;rsquo;,&amp;lsquo;b&amp;rsquo;]).T.to_dict(&amp;lsquo;list&amp;rsquo;)
+2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+3. count rows with same value df[col].value_counts()
+4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option(&#39;display.expand_frame_repr&#39;, False) Other settings: pd.set_option(&#39;display.height&#39;, 1000) pd.set_option(&#39;display.max_rows&#39;, 500) pd.set_option(&#39;display.max_columns&#39;, 500) pd.set_option(&#39;display.width&#39;, 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &amp;gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &amp;gt; n)  </description>
     </item>
     
     <item>
