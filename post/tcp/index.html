@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-04-08T00:00:00Z" />
+    <meta property="article:published_time" content="2019-04-09T00:00:00Z" />
 
     
     
@@ -37,7 +37,7 @@
     <title>Difference between Multi-Processing, Multi-threading and Coroutine &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="How is a computer program executed? A program needs at least one thread, one process, one core, one CPU to run on. A thread lives in process, a process lives in" />
+    <meta name="description" content="How is a computer program executed? A program needs at least one thread to run on. And a coroutine live in a thread, a thread lives in process, a process lives " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -100,15 +100,15 @@
     },
     "headline": Difference between Multi-Processing, Multi-threading and Coroutine,
     "name": Difference between Multi-Processing, Multi-threading and Coroutine,
-    "wordCount": 156,
-    "timeRequired": "PT1M",
+    "wordCount": 686,
+    "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
     "url": /post/tcp/,
-    "datePublished": 2019-04-08T00:00Z,
-    "dateModified": 2019-04-08T00:00Z,
+    "datePublished": 2019-04-09T00:00Z,
+    "dateModified": 2019-04-09T00:00Z,
     
     
     "description": ,
@@ -200,8 +200,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2019-04-08T00:00:00Z">
-            Apr 8, 2019
+          <time class="post-date" datetime="2019-04-09T00:00:00Z">
+            Apr 9, 2019
           </time>
         
          
@@ -211,40 +211,83 @@
     <section class="post-content">
       
 
-<p>How is a computer program executed? A program needs at least one <strong>thread</strong>, one <strong>process</strong>, one <strong>core</strong>, one <strong>CPU</strong> to run on.
-A thread lives in process, a process lives in core, a core lives in a CPU.</p>
-
-<h2 id="multi-core-cpu-vs-multi-cpu">multi-core CPU vs Multi-CPU</h2>
+<p>How is a computer program executed? A program needs at least one thread to run on.
+And  a <strong>coroutine</strong> live in a thread, a <strong>thread</strong> lives in process, a <strong>process</strong> lives in core, a <strong>core</strong> lives in a CPU.</p>
 
 <ul>
-<li>In a same CPU, there can be multiple cores. Different cores work together and share resources.
-Across different CPUs there could be also multiple cores, but usually not a good practice because some resources are not shared.
-For same amount of cores, we usually have a lot better performance gain by putting them in a same CPU. Now for commercial CPU, 16 cores is pretty common. Multi-CPU is usually good for running completely isolated programs (not sharing any data)</li>
+<li>Multi-Processing usually refer to many processes execute in <strong>parallel</strong>. Process is smallest resource management unit, different process share different resource.</li>
+<li>Multi-Threading usually refer to many threads execute <strong>concurrently</strong>, when there are idle cores, threads can use idle cores to run in <strong>parallel</strong>. Thread is smallest execution unit, a program needs at least one thread to run.</li>
+<li>Coroutine usually refer to many routines execute <strong>concurrently</strong>.</li>
 </ul>
 
 <h2 id="concurrent-and-parallel">Concurrent and Parallel</h2>
 
-<p>Concurrent: When
-Parallel: Execution at the same time.</p>
+<p>Many threads live in a process, only one thread can own the process, when they own the process, they can run, they take turns to own the core.</p>
 
-<h2 id="what-is-a-process">What is a process</h2>
+<p><strong>Concurrent</strong>: Thread A and Thread B are in same process, takes turns to own the process,  yield when waiting for resources or scheduled cpu time is used up.
+Use case is dealing with I/O-intensive tasks.
+<strong>Parallel</strong>: Thread A and Thread B are in different processes, execute at the same.
+Use case is dealing with CPU(Data)-intensive tasks.</p>
 
-<h3 id="for-distributing">For distributing</h3>
+<h2 id="cpu-data-intensive-tasks">CPU(Data) intensive tasks</h2>
 
-<h2 id="what-is-a-thread">What is a thread</h2>
+<p>Usually use multi-processing and multi-threading, as a normal task won&rsquo;t wait for some external data, it needs cpu to do computation for most of the time.
+But which one to choose is depend on different kinds of computing tasks.</p>
 
-<h3 id="advantage">Advantage</h3>
+<h3 id="multi-threading-vs-multi-processing">Multi-threading vs Multi-processing</h3>
 
-<h2 id="what-is-a-coroutine">What is a Coroutine</h2>
+<p>Thread is lighter than process, lighter means easy to create and destroy, occupy less resource.
+Threads share same address space, heap but each thread has its own stack.
+- Communication between threads is faster.
+- Multi-processing is more reliable, one process is crashed -&gt; won&rsquo;t affect other processes. On contrast, one thread crashes, the process it belongs to, as well as other threads in the same process become dead.</p>
 
-<h3 id="why-we-prefer-coroutine-in-python">Why we prefer coroutine in Python</h3>
+<p>Overall, multi-threading is good for co-operative tasks, multi-processing is good for isolated tasks.
+For example, if the tasks are highly related and need frequently create/destroy sub-tasks, (like running O(n) parallel BFS algorithm ), multi-threading is preferred.
+Otherwise, tasks like running a multi-processing(computing page-rank from 3 different sources in parallel) is preferred.</p>
 
-<h3 id="tornado-greenlet-gevent">Tornado, Greenlet, Gevent</h3>
+<p>Example: Spark, Hadoop, distributed computing.</p>
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTc4NDQ3MiwtMTIyNjYwMTgzMywtNj
-AxMTM1MjkwLDE5NzgxODgzMTQsNTg0MTYwNjBdfQ==
--->
+<h2 id="i-o-intensive-tasks">I/O-intensive tasks</h2>
+
+<p>Usually use multi-threading and coroutine, as a normal task spends most of its time waiting for I/O(Disk, Network, RAM).</p>
+
+<p>Example: Web servers, Tornado, Gevent</p>
+
+<h3 id="coroutine-vs-multi-threading">Coroutine vs Multi-threading</h3>
+
+<p>Coroutine is one of the reason why Python, Go are so popular to write web servers.
+Coroutines run concurrently in a thread just like threads run concurrently in a process.
+But:
+ - Concurrent execution needs context-switch and context-switch by coroutine is extremely light, which means much cheaper, faster than multi-threading
+ - Coroutine is managed by user,  multi-threading is managed by kernel. Developers have better control of the execution flow by using coroutine, for example, a coroutine won&rsquo;t be forced to yield.
+ - Coroutines cannot run in parallel.</p>
+
+<h3 id="i-o-intensive-in-python">I/O intensive in Python</h3>
+
+<p>In python, because of the existence of GIL(one GIL per process),  so only one thread can acquire the GIL to run at the same time even, so multi-threading isn&rsquo;t really multi-threading in python, as threads can only run concurrently but not in parallel.
+So coroutine and multi-threading has no difference except multi-threading is heavier and slower in Python.</p>
+
+<p>In python, we use multi-processing lib for CPU-intensive tasks. Multi-processing lib allows each process have its own GIL.</p>
+
+<h3 id="i-o-intensive-in-python-1">I/O intensive in Python</h3>
+
+<p>Use coroutine lib like asyncio, gevent, or framework like Tornado for I/O-intensive tasks.</p>
+
+<h3 id="cpu-intensive-in-python">CPU intensive in Python</h3>
+
+<p>Use multi-processing</p>
+
+<h3 id="need-some-sort-of-combination">Need some sort of combination?</h3>
+
+<p>Use coroutine and reimplement key module using C to avoid GIL.</p>
+
+<h2 id="multi-core-cpu-vs-multi-cpu">Multi-core CPU vs Multi-CPU</h2>
+
+<ul>
+<li>In a same CPU, there can be multiple cores. Different cores work together and share resources.
+Across different CPUs there could be also multiple cores, but usually not a good practice because some resources are not shared, getting resources owned by other CPU is expansive.
+For same amount of cores, we usually have a lot better performance gain by putting them in a same CPU. Now for commercial CPU, 16 cores is pretty common. Multi-CPU is usually good for running completely isolated programs (not sharing any data)</li>
+</ul>
 
     </section>
 
