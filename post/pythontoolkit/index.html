@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Pandas Cheat Sheet"/>
+<meta name="twitter:title" content="Useful tool kit"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Pandas Cheat Sheet &middot; Hello World, This Is J" />
+  	<meta property="og:title" content="Useful tool kit &middot; Hello World, This Is J" />
   	<meta property="og:site_name" content="Hello World, This Is J" />
-  	<meta property="og:url" content="/post/pandascheatsheet/" />
+  	<meta property="og:url" content="/post/pythontoolkit/" />
 
     
         
@@ -29,16 +29,17 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-09-08T00:00:00Z" />
+    <meta property="article:published_time" content="2019-04-08T00:00:00Z" />
 
     
     
 
-    <title>Pandas Cheat Sheet &middot; Hello World, This Is J</title>
+    <title>Useful tool kit &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content=" 1. Collect dataframe as dictionary .set_index([&amp;lsquo;a&amp;rsquo;,&amp;lsquo;b&amp;rsquo;]).T.to_dict(&amp;lsquo;list&amp;rsquo;)
-2. Read in csv file format(transpose) https://pa" />
+    <meta name="description" content="Useful tools could be used in python development
+1. track memory usage line by line https://pypi.org/project/memory_profiler/
+2. track run time for each line ht" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -62,7 +63,7 @@
     
     <meta name="generator" content="Hugo 0.54.0" />
 
-    <link rel="canonical" href="/post/pandascheatsheet/" />
+    <link rel="canonical" href="/post/pythontoolkit/" />
 
     
       
@@ -99,23 +100,23 @@
             
         ]
     },
-    "headline": Pandas Cheat Sheet,
-    "name": Pandas Cheat Sheet,
-    "wordCount": 65,
+    "headline": Useful tool kit,
+    "name": Useful tool kit,
+    "wordCount": 52,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": /post/pandascheatsheet/,
-    "datePublished": 2018-09-08T00:00Z,
-    "dateModified": 2018-09-08T00:00Z,
+    "url": /post/pythontoolkit/,
+    "datePublished": 2019-04-08T00:00Z,
+    "dateModified": 2019-04-08T00:00Z,
     
     
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": /post/pandascheatsheet/
+        "@id": /post/pythontoolkit/
     }
 }
     </script>
@@ -196,13 +197,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Pandas Cheat Sheet</h1>
+        <h1 class="post-title">Useful tool kit</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2018-09-08T00:00:00Z">
-            Sep 8, 2018
+          <time class="post-date" datetime="2019-04-08T00:00:00Z">
+            Apr 8, 2019
           </time>
         
          
@@ -214,38 +215,34 @@
 
 <hr />
 
-<h4 id="1-collect-dataframe-as-dictionary">1. Collect dataframe as dictionary</h4>
+<p>Useful tools could be used in python development</p>
 
-<p>.set_index([&lsquo;a&rsquo;,&lsquo;b&rsquo;]).T.to_dict(&lsquo;list&rsquo;)</p>
+<h4 id="1-track-memory-usage-line-by-line">1. track memory usage line by line</h4>
 
-<h4 id="2-read-in-csv-file-format-transpose">2. Read in csv file format(transpose)</h4>
+<p><a href="https://pypi.org/project/memory_profiler/">https://pypi.org/project/memory_profiler/</a></p>
 
-<p><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html</a></p>
+<h4 id="2-track-run-time-for-each-line">2. track run time for each line</h4>
 
-<h4 id="3-count-rows-with-same-value">3. count rows with same value</h4>
+<p><a href="https://pypi.org/project/line_profiler/">https://pypi.org/project/line_profiler/</a></p>
 
-<p>df[col].value_counts()</p>
+<h4 id="3-regular-expression">3. regular expression</h4>
 
-<h4 id="4-display-columns-unlimit-equivalent-to-spark-df-with-limit-false">4. display columns unlimit ( equivalent to spark df, with limit=False)</h4>
+<p><a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></p>
 
-<pre><code class="language-Python">pd.set_option('display.expand_frame_repr', False)
+<h4 id="4-google-word-to-vector-trained-model">4. google word to vector, trained model</h4>
 
-Other settings:
-pd.set_option('display.height', 1000)
-pd.set_option('display.max_rows', 500)
-pd.set_option('display.max_columns', 500)
-pd.set_option('display.width', 1000)
+<p>GoogleNews-vectors-negative300.bin
+<a href="https://code.google.com/archive/p/word2vec/">https://code.google.com/archive/p/word2vec/</a></p>
+
+<h4 id="5-trace-execution-for-each-line-function">5. trace execution for each line/function</h4>
+
+<pre><code class="language-python">python -m trace --count -C . somefile.py ...
 </code></pre>
 
-<h4 id="5-remove-all-the-rows-with-a-value-occur-less-than-n-times">5. remove all the rows with a value occur less than n times</h4>
-
-<pre><code class="language-Python">df[df.groupby(value).uid.transform(len) &gt; n]
-or:
-df.groupby(by=value).filter(lambda x: len(x) &gt; n)
-</code></pre>
+<p><a href="https://docs.python.org/3.7/library/trace.html">https://docs.python.org/3.7/library/trace.html</a></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNTE2MzcwMCwxODM2NjYxOTE0XX0=
+eyJoaXN0b3J5IjpbMTI0NDU2MDk2OV19
 -->
 
     </section>
@@ -285,19 +282,19 @@ eyJoaXN0b3J5IjpbMTkxNTE2MzcwMCwxODM2NjYxOTE0XX0=
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Pandas%20Cheat%20Sheet&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fpandascheatsheet%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Useful%20tool%20kit&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fpythontoolkit%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fpandascheatsheet%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fpythontoolkit%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpandascheatsheet%2f&amp;description=Pandas%20Cheat%20Sheet"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpythontoolkit%2f&amp;description=Useful%20tool%20kit"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fpandascheatsheet%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fpythontoolkit%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -321,17 +318,17 @@ eyJoaXN0b3J5IjpbMTkxNTE2MzcwMCwxODM2NjYxOTE0XX0=
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/nltk/">
+      <a class="read-next-story" style="no-cover" href="/post/pythoncheatsheet/">
           <section class="post">
-              <h2>NLTK</h2>
+              <h2>Python CheatSheet</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/post/readme/">
+      <a class="read-next-story prev" style="no-cover" href="/post/nltk/">
           <section class="post">
-              <h2></h2>
+              <h2>NLTK</h2>
           </section>
       </a>
   

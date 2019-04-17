@@ -223,11 +223,13 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/pysparkcheatsheet/">Pyspark</a></h2>
+        <h2 class="post-title"><a href="/post/sublimetoolkit/">Sublime ToolKit</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>1. initilaztion 1. spark session from pyspark.sql import SparkSession spark = SparkSession \ .builder \ .appName(&quot;name&quot;) \ .config(&quot;spark.some.config.option&quot;, &quot;some-value&quot;) \ .getOrCreate()  2. spark context 1. from spark session sc = spark.sparkContext  2. from spark context conf = SparkConf().setAppName(&quot;KMeans&quot;).setMaster(&quot;local[*]&quot;) sc = SparkContext(conf =conf) or sc = SparkContext.getOrCreate(conf)  2. paritition by index .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)\ this get rid of the first line(rdd) in the file. <a class="read-more" href="/post/pysparkcheatsheet/">&raquo;</a></p>
+            <p>Useful sublime packages, steps to install: 1. open sublime 2. open command palette (Ctrl+Shift+P for Windows/Linux, Cmd+Shift+P for Mac OS) 3. type installSearch for Package Control: Install Package and hit Enter. 4 type &quot;package_name&quot;, find the package and hit enter
+1.gitgutter very useful tool if you are working with a git repo
+2.SumlineLinter &amp; SumlineLinter-flake8 linter 3. KiteSublime to search documentations &gt; Written with StackEdit.  <a class="read-more" href="/post/sublimetoolkit/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -247,8 +249,8 @@
         
 
         
-        <time class="post-date" datetime="2019-04-08T00:00:00Z">
-            8 Apr 2019
+        <time class="post-date" datetime="2019-04-09T00:00:00Z">
+            9 Apr 2019
         </time>
     </footer>
 </article>
@@ -289,14 +291,16 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/toolkit/">Useful tool kit</a></h2>
+        <h2 class="post-title"><a href="/post/pythontoolkit/">Useful tool kit</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>1. track memory usage line by line https://pypi.org/project/memory_profiler/
+            <p>Useful tools could be used in python development
+1. track memory usage line by line https://pypi.org/project/memory_profiler/
 2. track run time for each line https://pypi.org/project/line_profiler/
 3. regular expression https://docs.python.org/3/library/re.html
-4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/ <a class="read-more" href="/post/toolkit/">&raquo;</a></p>
+4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/
+5. trace execution for each line/function python -m trace --count -C . somefile.py ...  https://docs.python.org/3.7/library/trace.html <a class="read-more" href="/post/pythontoolkit/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -318,6 +322,41 @@
         
         <time class="post-date" datetime="2019-04-08T00:00:00Z">
             8 Apr 2019
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/nltk/">NLTK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
+Support sentence, word, for 17 languages source code for sentence tokenizer: ``python def sent_tokenize(text, language='english'): &quot;&quot;&quot; Return a sentence-tokenized copy of *text*, using NLTK's recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer` for the specified language).
+:param text: text to split into sentences :param language: the model name in the Punkt corpus &quot;&quot;&quot; tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language)) return tokenizer.tokenize(text)  word tokenizer: word_tokenize(text, language=&lsquo;english&rsquo;, preserve_line=False) perserve_line == false, then call sentence tokenizer first, otherwise, don&rsquo;t  <a class="read-more" href="/post/nltk/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
+            
+            
+            
+            J
+                 
+        
+
+        
+        <time class="post-date" datetime="2018-09-08T00:00:00Z">
+            8 Sep 2018
         </time>
     </footer>
 </article>
@@ -361,81 +400,11 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/nltk/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> NLTK&mdash; title: &ldquo;NLTK&rdquo; date: 2019-04-08T22:38:04+08:00
-draft: false 1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
-Support sentence, word, for 17 languages source code for sentence tokenizer: ``python def sent_tokenize(text, language='english'): &quot;&quot;&quot; Return a sentence-tokenized copy of *text*, using NLTK's recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer` for the specified language).
-:param text: text to split into sentences :param language: the model name in the Punkt corpus &quot;&quot;&quot; tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language)) return tokenizer.tokenize(text)  word tokenizer: word_tokenize(text, language=&lsquo;english&rsquo;, preserve_line=False) perserve_line == false, then call sentence tokenizer first, otherwise, don&rsquo;t  <a class="read-more" href="/post/nltk/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            J
-                 
-        
-
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/post/readme/"></a></h2>
     </header>
     <section class="post-excerpt">
         
             <p>PythonNotes Cheat notes for Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc <a class="read-more" href="/post/readme/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            J
-                 
-        
-
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/stackeditcheatsheet/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Welcome to StackEdit! Hi! I&rsquo;m your first Markdown file in StackEdit. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the file explorer on the left corner of the navigation bar.
-Files StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible offline! <a class="read-more" href="/post/stackeditcheatsheet/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

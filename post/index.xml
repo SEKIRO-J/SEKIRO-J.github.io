@@ -22,12 +22,14 @@
     </item>
     
     <item>
-      <title>Pyspark</title>
-      <link>/post/pysparkcheatsheet/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Sublime ToolKit</title>
+      <link>/post/sublimetoolkit/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/pysparkcheatsheet/</guid>
-      <description>1. initilaztion 1. spark session from pyspark.sql import SparkSession spark = SparkSession \ .builder \ .appName(&amp;quot;name&amp;quot;) \ .config(&amp;quot;spark.some.config.option&amp;quot;, &amp;quot;some-value&amp;quot;) \ .getOrCreate()  2. spark context 1. from spark session sc = spark.sparkContext  2. from spark context conf = SparkConf().setAppName(&amp;quot;KMeans&amp;quot;).setMaster(&amp;quot;local[*]&amp;quot;) sc = SparkContext(conf =conf) or sc = SparkContext.getOrCreate(conf)  2. paritition by index .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)\ this get rid of the first line(rdd) in the file.</description>
+      <guid>/post/sublimetoolkit/</guid>
+      <description>Useful sublime packages, steps to install: 1. open sublime 2. open command palette (Ctrl+Shift+P for Windows/Linux, Cmd+Shift+P for Mac OS) 3. type installSearch for Package Control: Install Package and hit Enter. 4 type &amp;quot;package_name&amp;quot;, find the package and hit enter
+1.gitgutter very useful tool if you are working with a git repo
+2.SumlineLinter &amp;amp; SumlineLinter-flake8 linter 3. KiteSublime to search documentations &amp;gt; Written with StackEdit. </description>
     </item>
     
     <item>
@@ -41,14 +43,27 @@
     
     <item>
       <title>Useful tool kit</title>
-      <link>/post/toolkit/</link>
+      <link>/post/pythontoolkit/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/toolkit/</guid>
-      <description>1. track memory usage line by line https://pypi.org/project/memory_profiler/
+      <guid>/post/pythontoolkit/</guid>
+      <description>Useful tools could be used in python development
+1. track memory usage line by line https://pypi.org/project/memory_profiler/
 2. track run time for each line https://pypi.org/project/line_profiler/
 3. regular expression https://docs.python.org/3/library/re.html
-4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/</description>
+4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/
+5. trace execution for each line/function python -m trace --count -C . somefile.py ...  https://docs.python.org/3.7/library/trace.html</description>
+    </item>
+    
+    <item>
+      <title>NLTK</title>
+      <link>/post/nltk/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nltk/</guid>
+      <description> 1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
+Support sentence, word, for 17 languages source code for sentence tokenizer: ``python def sent_tokenize(text, language=&#39;english&#39;): &amp;quot;&amp;quot;&amp;quot; Return a sentence-tokenized copy of *text*, using NLTK&#39;s recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer` for the specified language).
+:param text: text to split into sentences :param language: the model name in the Punkt corpus &amp;quot;&amp;quot;&amp;quot; tokenizer = load(&#39;tokenizers/punkt/{0}.pickle&#39;.format(language)) return tokenizer.tokenize(text)  word tokenizer: word_tokenize(text, language=&amp;lsquo;english&amp;rsquo;, preserve_line=False) perserve_line == false, then call sentence tokenizer first, otherwise, don&amp;rsquo;t </description>
     </item>
     
     <item>
@@ -65,33 +80,11 @@
     
     <item>
       <title></title>
-      <link>/post/nltk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/nltk/</guid>
-      <description> NLTK&amp;mdash; title: &amp;ldquo;NLTK&amp;rdquo; date: 2019-04-08T22:38:04+08:00
-draft: false 1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
-Support sentence, word, for 17 languages source code for sentence tokenizer: ``python def sent_tokenize(text, language=&#39;english&#39;): &amp;quot;&amp;quot;&amp;quot; Return a sentence-tokenized copy of *text*, using NLTK&#39;s recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer` for the specified language).
-:param text: text to split into sentences :param language: the model name in the Punkt corpus &amp;quot;&amp;quot;&amp;quot; tokenizer = load(&#39;tokenizers/punkt/{0}.pickle&#39;.format(language)) return tokenizer.tokenize(text)  word tokenizer: word_tokenize(text, language=&amp;lsquo;english&amp;rsquo;, preserve_line=False) perserve_line == false, then call sentence tokenizer first, otherwise, don&amp;rsquo;t </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>/post/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/post/readme/</guid>
       <description>PythonNotes Cheat notes for Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/stackeditcheatsheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/stackeditcheatsheet/</guid>
-      <description>Welcome to StackEdit! Hi! I&amp;rsquo;m your first Markdown file in StackEdit. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the file explorer on the left corner of the navigation bar.
-Files StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible offline!</description>
     </item>
     
   </channel>
