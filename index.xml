@@ -6,10 +6,20 @@
     <description>Recent content on Hello World, This Is J</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes CheatSheet</title>
+      <link>/post/k8snotes/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/k8snotes/</guid>
+      <description>Table of Contents: * [Basic Terms]() * [Run a service]() * [Expose a service]() * [Secret, ConfigMap]() * [Volume and PersistentVolume ]() * [Autoscaling]() * [Helm]()
+Basic Terms cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine. context: a group of access parameters, a cluster, a namespace, a user. namespace: virtual cluster, use to separate resources across different environments like prod, dev, test. node: a virtual/physical machine pod: a set of containers to orchestrate, minimal object to scale container: docker container runs in pod  manifests/objects pod,depolyment,daemonSet,replicas,service,volumes,HorizontalPodsAutoscaler(HPA) ususally defined by .</description>
+    </item>
     
     <item>
       <title>Difference between Multi-Processing, Multi-threading and Coroutine</title>
@@ -27,9 +37,10 @@
       <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/sublimetoolkit/</guid>
-      <description>Useful sublime packages, steps to install: 1. open sublime 2. open command palette (Ctrl+Shift+P for Windows/Linux, Cmd+Shift+P for Mac OS) 3. type installSearch for Package Control: Install Package and hit Enter. 4 type &amp;quot;package_name&amp;quot;, find the package and hit enter
-1.gitgutter very useful tool if you are working with a git repo
-2.SumlineLinter &amp;amp; SumlineLinter-flake8 linter 3. KiteSublime to search documentations &amp;gt; Written with StackEdit. </description>
+      <description> Useful sublime packages, steps to install:
+1. open sublime 2. open command palette `(Ctrl+Shift+P for Windows/Linux, Cmd+Shift+P for Mac OS)` 3. type `install`Search for _Package Control:_ Install Package and hit Enter. 4 type `&amp;quot;package_name&amp;quot; `, find the package and hit enter  1.gitgutter very useful tool if you are working with a git repo
+2.SumlineLinter &amp;amp; SumlineLinter-flake8 linter
+3. KiteSublime to search documentations ``` &amp;gt; Written with StackEdit. </description>
     </item>
     
     <item>
@@ -52,7 +63,39 @@
 2. track run time for each line https://pypi.org/project/line_profiler/
 3. regular expression https://docs.python.org/3/library/re.html
 4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/
-5. trace execution for each line/function python -m trace --count -C . somefile.py ...  https://docs.python.org/3.7/library/trace.html</description>
+5. trace execution for each line/function flow python -m trace --count -C . somefile.py ...  https://docs.python.org/3.7/library/trace.html
+6. get time analysis for a statement execution usage: python -m timeit &#39;stmt&#39; # number = 10000 or: timeit.</description>
+    </item>
+    
+    <item>
+      <title>CPP Notes</title>
+      <link>/post/cpp-notes/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cpp-notes/</guid>
+      <description>1. lvalue and rvalue you can get memory address for lvalue, you can&amp;rsquo;t for rvalue
+2. lvalue reference Reference is cpp is like pointer in c, but not exactly same.
+Pass lvalue as parameter, you can just refer to its address, we know its memory address, we can access the data without deep copy, save both time and space.
+3. rvalue reference Pass rvalue as parameter, you can&amp;rsquo;t refer to its address(for example, when a function returns, a heap object allocated, but the variable holds the object&amp;rsquo;s heap address will be poped with the stackframe).</description>
+    </item>
+    
+    <item>
+      <title>ML-DL Notes</title>
+      <link>/post/md-dl-notes/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/md-dl-notes/</guid>
+      <description>Notes for machine learning and deep learning models, design and training techniques Mainly includes: CNN, RNN(LTSM)
+ensemble techniques
+activation functions
+1. deep learning concept 1. LTSM, a type of RNN, most successful RNNs are LTSM RNNs
+1. use a vector as cell state to record state
+2. use three gates to erase, update, output the cell state.
+Example: Rakuten data challenge
+Character-level tokenization
+Ensembling:
+Bidirectional training
+2. Ensemble learning  Bagging(bootstrap aggregating): randomly select N training sets, then vote</description>
     </item>
     
     <item>
@@ -76,6 +119,61 @@ Support sentence, word, for 17 languages source code for sentence tokenizer: ``p
 2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
 3. count rows with same value df[col].value_counts()
 4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option(&#39;display.expand_frame_repr&#39;, False) Other settings: pd.set_option(&#39;display.height&#39;, 1000) pd.set_option(&#39;display.max_rows&#39;, 500) pd.set_option(&#39;display.max_columns&#39;, 500) pd.set_option(&#39;display.width&#39;, 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &amp;gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &amp;gt; n)  </description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>/post/performance/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/performance/</guid>
+      <description>Table of Contents: * [Edge Computing]() * [Content Delivery Network]() * Server Side * Gateway: nginx, openResty * long alive connection * optimized, cheap, fast * reverse proxy * load balancer * [Application Side]() * [Algorithms]()
+* Disk I/O * Async * Disk Performance
+* SSD * RAID 0, 1, 5, 10
+* Network I/O * zip message * use a better network card &amp;amp; adaptor
+ [Database Side]()  In memory cache -Redis/memcached high availability relational db fast complex query support tabular data no-relational db fast simple query flexible support many data types   </description>
+    </item>
+    
+    <item>
+      <title>DistributedComputing Notes</title>
+      <link>/post/spark-hadoop-notes/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/spark-hadoop-notes/</guid>
+      <description>Mostly Hadoop, Spark As well as concepts, &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- think at scale!
+Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-calcualtion, reuse same rdd as much as you can,  use cache() to prevent re calculation, (cache rdd in memory) use persist() to manually set different level of cache, ex.StorageLevel.MEMORY_AND_DISK_SER others:
+MEMORY_ONLY
+MEMORY_AND_DISK
+MEMORY_ONLY_SER
+MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to disk</description>
+    </item>
+    
+    <item>
+      <title>Java Notes</title>
+      <link>/post/java-notes/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/java-notes/</guid>
+      <description>Java NOtes and cheat sheet I wrote during work and academia
+1. ArrayList ArrayList is implemented based on primitive array
+Feature: ArrayList myarrlist = new ArrayList()
+1.Type Satety ArrayList provides stronger type safety ensurance than array
+https://coderanch.com/t/625190/certification/Array-ArrayList-Thread-safety-Type
+2. Flexibility ArrayList has Dynamic, and a better interface
+3. Size vs length Size is the capacity length is the actually length
+4. Multi-dimension arraylist doesn&amp;rsquo;t support multi-dimension, array does
+5, primitive types ArrayList doesn&amp;rsquo;t support primitive types</description>
+    </item>
+    
+    <item>
+      <title>Scala Notes</title>
+      <link>/post/scala-notes/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/scala-notes/</guid>
+      <description>I wrote more than 5000 lines of Scala code about 1 year ago, but later on I don&amp;rsquo;t have any chance to write it. (University doesn&amp;rsquo;t teach it, previous internships don&amp;rsquo;t use it)
+Now I&amp;rsquo;m picking it up as the university teaches spark by Scala, but I feel that I forgot lots of not only syntax but also some key knowledge about Scala.
+Therefore I want to write some Scala notes.</description>
     </item>
     
     <item>

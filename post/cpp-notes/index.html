@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="CPP Notes"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="CPP Notes &middot; Hello World, This Is J" />
+  	<meta property="og:site_name" content="Hello World, This Is J" />
+  	<meta property="og:url" content="/post/cpp-notes/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-09-08T00:00:00Z" />
+
+    
+    
+
+    <title>CPP Notes &middot; Hello World, This Is J</title>
+
+    
+    <meta name="description" content="1. lvalue and rvalue you can get memory address for lvalue, you can&amp;rsquo;t for rvalue
+2. lvalue reference Reference is cpp is like pointer in c, but not exactl" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hello World, This Is J" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.55.5" />
+
+    <link rel="canonical" href="/post/cpp-notes/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "/images/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "/images/avatar.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://sekiro-j.github.io/",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "CPP Notes",
+    "name": "CPP Notes",
+    "wordCount":  403 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "/post/cpp-notes/",
+    "datePublished": "2018-09-08T00:00Z",
+    "dateModified": "2018-09-08T00:00Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/post/cpp-notes/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+     
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://www.linkedin.com/in/junjie-gu-37790011a/">LinkedIn</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/resume.pdf">Resume</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/SEKIRO-J">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/avatar.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">CPP Notes</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-09-08T00:00:00Z">
+            Sep 8, 2018
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<h3 id="1-lvalue-and-rvalue">1. lvalue and rvalue</h3>
+
+<p>you can get memory address for lvalue, you can&rsquo;t for rvalue</p>
+
+<h3 id="2-lvalue-reference">2. lvalue reference</h3>
+
+<p>Reference is cpp is like pointer in c, but not exactly same.</p>
+
+<p>Pass lvalue as parameter, you can just refer to its address, we know its memory address, we can access the data without deep copy, save both time and space.</p>
+
+<h3 id="3-rvalue-reference">3. rvalue reference</h3>
+
+<p>Pass rvalue as parameter, you can&rsquo;t refer to its address(for example, when a function returns, a heap object allocated, but the variable holds the object&rsquo;s heap address will be poped with the stackframe). To forward the data content in rvalue, you need to deep copy it again and again.
+With new feature rvalue reference introduced in c++11, you can use rvalue reference, it allows you to make shallow copy when forward the data content of a rvalues.</p>
+
+<p>class Test {
+    int * arr{nullptr};
+public:
+    Test():arr(new int[5000]{1,2,3,4}) {
+        cout &lt;&lt; &ldquo;default constructor&rdquo; &lt;&lt; endl;
+    }
+    Test(const Test &amp; t) {
+        cout &lt;&lt; &ldquo;copy constructor&rdquo; &lt;&lt; endl;
+        if (arr == nullptr) arr = new int[5000];
+        memcpy(arr, t.arr, 5000*sizeof(int));  // a lot of data to copy!
+    }
+    Test(Test &amp;&amp; t): arr(t.arr) {
+        cout &lt;&lt; &ldquo;move constructor&rdquo; &lt;&lt; endl;
+        t.arr = nullptr;
+    }
+    ~Test(){
+        cout &lt;&lt; &ldquo;destructor&rdquo; &lt;&lt; endl;
+        delete [] arr;
+    }
+};</p>
+
+<p>Test createTest() {
+    return Test();   // line A, call copy constructor 1st time
+}</p>
+
+<p>int main() {<br />
+Scenario 1:
+    Test t(createTest());<br />
+    /* not reasonable to use copy constructor, object one line A is clearly a temporary object, what we want it move/steal its content/data to object on line B, use move copy constructor!*/</p>
+
+<p>Scenario 2:
+    Test test1;
+      // do something to test1
+      Test test2(test1); // duplicate test1
+      // do something to test2
+    /*Here you might or might not want to keep both objects, if you want to keep test1, it&rsquo;s reasonable to use copy constructor */
+    Test test2(std::move(test1)); // move data content of test1 to test2
+    /<em>If you don&rsquo;t need test1 anymore, move copy constructor, it&rsquo;s more efficient</em>/<br />
+}</p>
+
+<h3 id="4-keyword-friend">4. keyword friend</h3>
+
+<p>pros:
+1.allows more efficience program, a friend class of class A can directly access class A&rsquo;s private field, withou calling class A&rsquo;s member function frequently.
+2.More flexiable If class A want to share some resource with class B, but not class C. Instead of set the resource publice, A can keep the resource private and set B as friend.</p>
+
+<p>cons:
+1. Bad for the Encapsulation feature.</p>
+
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjk4MjY0NzQ3XX0=
+--></p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="/" style="background-image: url(/images/avatar.jpg)"><span class="hidden">J's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="/">J</a></h4>
+  
+  <p>Read <a href="/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    <span class="author-link icon-link"><a href="https://sekiro-j.github.io/">https://sekiro-j.github.io/</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=CPP%20Notes&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fcpp-notes%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fcpp-notes%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fcpp-notes%2f&amp;description=CPP%20Notes"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fcpp-notes%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/post/pythontoolkit/">
+          <section class="post">
+              <h2>Useful tool kit</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/md-dl-notes/">
+          <section class="post">
+              <h2>ML-DL Notes</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Hello World, This Is J</a> </section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

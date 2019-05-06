@@ -61,7 +61,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.55.5" />
 
     <link rel="canonical" href="/post/pythontoolkit/" />
 
@@ -74,21 +74,21 @@
     "@type": "Article",
     "publisher": {
         "@type": "Organization",
-        "name": ,
-        "logo": /images/avatar.jpg
+        "name":  null ,
+        "logo": "/images/avatar.jpg"
     },
     "author": {
         "@type": "Person",
-        "name": ,
+        "name":  null ,
         
         "image": {
             "@type": "ImageObject",
-            "url": /images/avatar.jpg,
+            "url": "/images/avatar.jpg",
             "width": 250,
             "height": 250
         }, 
         
-        "url": https://sekiro-j.github.io/,
+        "url": "https://sekiro-j.github.io/",
         "sameAs": [
             
             
@@ -100,23 +100,23 @@
             
         ]
     },
-    "headline": Useful tool kit,
-    "name": Useful tool kit,
-    "wordCount": 52,
+    "headline": "Useful tool kit",
+    "name": "Useful tool kit",
+    "wordCount":  78 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": en
+      "alternateName": "en"
     },
-    "url": /post/pythontoolkit/,
-    "datePublished": 2019-04-08T00:00Z,
-    "dateModified": 2019-04-08T00:00Z,
+    "url": "/post/pythontoolkit/",
+    "datePublished": "2019-04-08T00:00Z",
+    "dateModified": "2019-04-08T00:00Z",
     
     
-    "description": ,
+    "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": /post/pythontoolkit/
+        "@id": "/post/pythontoolkit/"
     }
 }
     </script>
@@ -234,15 +234,27 @@
 <p>GoogleNews-vectors-negative300.bin
 <a href="https://code.google.com/archive/p/word2vec/">https://code.google.com/archive/p/word2vec/</a></p>
 
-<h4 id="5-trace-execution-for-each-line-function">5. trace execution for each line/function</h4>
+<h4 id="5-trace-execution-for-each-line-function-flow">5. trace execution for each line/function flow</h4>
 
 <pre><code class="language-python">python -m trace --count -C . somefile.py ...
 </code></pre>
 
 <p><a href="https://docs.python.org/3.7/library/trace.html">https://docs.python.org/3.7/library/trace.html</a></p>
 
+<h4 id="6-get-time-analysis-for-a-statement-execution">6. get time analysis for a statement execution</h4>
+
+<pre><code>usage:
+python -m timeit 'stmt' # number = 10000
+or:
+timeit.timeit('stmt', number=10000)
+In Ipython:
+%timeit 'stmt'
+</code></pre>
+
+<p><a href="https://docs.python.org/2/library/timeit.html">https://docs.python.org/2/library/timeit.html</a></p>
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NDU2MDk2OV19
+eyJoaXN0b3J5IjpbLTE0NTc4Nzg1MTMsMTI0NDU2MDk2OV19
 -->
 
     </section>
@@ -326,9 +338,9 @@ eyJoaXN0b3J5IjpbMTI0NDU2MDk2OV19
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/post/nltk/">
+      <a class="read-next-story prev" style="no-cover" href="/post/cpp-notes/">
           <section class="post">
-              <h2>NLTK</h2>
+              <h2>CPP Notes</h2>
           </section>
       </a>
   

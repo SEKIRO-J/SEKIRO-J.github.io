@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Java Notes"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Java Notes &middot; Hello World, This Is J" />
+  	<meta property="og:site_name" content="Hello World, This Is J" />
+  	<meta property="og:url" content="/post/java-notes/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-02-08T00:00:00Z" />
+
+    
+    
+
+    <title>Java Notes &middot; Hello World, This Is J</title>
+
+    
+    <meta name="description" content="Java NOtes and cheat sheet I wrote during work and academia
+1. ArrayList ArrayList is implemented based on primitive array
+Feature: ArrayList myarrlist = new Ar" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hello World, This Is J" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.55.5" />
+
+    <link rel="canonical" href="/post/java-notes/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "/images/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "/images/avatar.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://sekiro-j.github.io/",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Java Notes",
+    "name": "Java Notes",
+    "wordCount":  238 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "/post/java-notes/",
+    "datePublished": "2018-02-08T00:00Z",
+    "dateModified": "2018-02-08T00:00Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/post/java-notes/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+     
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://www.linkedin.com/in/junjie-gu-37790011a/">LinkedIn</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/resume.pdf">Resume</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/SEKIRO-J">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/avatar.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Java Notes</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-02-08T00:00:00Z">
+            Feb 8, 2018
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>Java NOtes and cheat sheet I wrote during work and academia</p>
+
+<h3 id="1-arraylist">1. ArrayList</h3>
+
+<p>ArrayList is implemented based on primitive array</p>
+
+<p>Feature:
+ArrayList<T> myarrlist = new ArrayList<T>()</p>
+
+<h4 id="1-type-satety">1.Type Satety</h4>
+
+<p>ArrayList provides stronger type safety ensurance than array</p>
+
+<p><a href="https://coderanch.com/t/625190/certification/Array-ArrayList-Thread-safety-Type">https://coderanch.com/t/625190/certification/Array-ArrayList-Thread-safety-Type</a></p>
+
+<h4 id="2-flexibility">2. Flexibility</h4>
+
+<p>ArrayList has Dynamic, and a better interface</p>
+
+<h4 id="3-size-vs-length">3. Size vs length</h4>
+
+<p>Size is the capacity
+length is the actually length</p>
+
+<h4 id="4-multi-dimension">4. Multi-dimension</h4>
+
+<p>arraylist doesn&rsquo;t support multi-dimension, array does</p>
+
+<h4 id="5-primitive-types">5, primitive types</h4>
+
+<p>ArrayList doesn&rsquo;t support primitive types</p>
+
+<h3 id="2-multi-threading">2. Multi-threading</h3>
+
+<p>Primitive types gurantees thread-safety
+Immutable objects are thread-safe, but mutable objects are not.
+For example, String is thread-safe, Stringbuffer is not.</p>
+
+<h3 id="3-string-pool">3. String pool</h3>
+
+<pre><code class="language-java">String str1 = new string(&quot;abc&quot;) // allocate space on heap, put it in string pool, return reference from  heap
+String str2 = &quot;abc&quot; // search in string pool to find if same string exists, by method &quot;equals&quot;, return reference from string pool
+obvisouly, str1.equals(str2) == True 
+but, str1 != str2, as str1 refer to heap, str2 refer to string pool
+
+String str3 = &quot;abc&quot;
+str2 = str3, as both refer to string pool
+
+str1 = str1.intern() 
+// if string pool contains the object str1 is referring(on heap), refer to string pool instead of heap. ojbect on heap will go to GC 
+now str2 = str1 = str3
+
+// string concate
+a + b, if both constant, consider as string literal
+a + b, if either is not constant, consider as variable, use new String()
+</code></pre>
+
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEzNzUzNDU5MjddfQ==
+--></p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="/" style="background-image: url(/images/avatar.jpg)"><span class="hidden">J's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="/">J</a></h4>
+  
+  <p>Read <a href="/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    <span class="author-link icon-link"><a href="https://sekiro-j.github.io/">https://sekiro-j.github.io/</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Java%20Notes&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fjava-notes%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fjava-notes%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fjava-notes%2f&amp;description=Java%20Notes"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fjava-notes%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/post/spark-hadoop-notes/">
+          <section class="post">
+              <h2>DistributedComputing Notes</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/scala-notes/">
+          <section class="post">
+              <h2>Scala Notes</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Hello World, This Is J</a> </section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
