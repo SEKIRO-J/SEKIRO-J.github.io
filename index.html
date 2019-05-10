@@ -234,6 +234,8 @@
     
         
     
+        
+    
 
     
         
@@ -259,12 +261,46 @@
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/k8snotes/">Kubernetes CheatSheet</a></h2>
+        <h2 class="post-title"><a href="/post/analysis-of-a-few-models/">Analysis of a few models</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Table of Contents: * [Basic Terms]() * [Run a service]() * [Expose a service]() * [Secret, ConfigMap]() * [Volume and PersistentVolume ]() * [Autoscaling]() * [Helm]()
-Basic Terms cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine. context: a group of access parameters, a cluster, a namespace, a user. namespace: virtual cluster, use to separate resources across different environments like prod, dev, test. node: a virtual/physical machine pod: a set of containers to orchestrate, minimal object to scale container: docker container runs in pod  manifests/objects pod,depolyment,daemonSet,replicas,service,volumes,HorizontalPodsAutoscaler(HPA) ususally defined by . <a class="read-more" href="/post/k8snotes/">&raquo;</a></p>
+            <p>1. OLS Ordinary Least Squares, the most common estimation method for linear models, It&rsquo;s good and simple, however, it has lots of assumptions. 1. the regression model is linear in coefficients and the error term 2. random sampling of observations 3. No multi-collinearity (each variable is independent) 4. Error term is independent and identically distributed 5. all independent variables are uncorrelated with the error term
+In brexit referendum data, there are 110 variables, there would be too much computation. <a class="read-more" href="/post/analysis-of-a-few-models/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
+            
+            
+            
+            J
+                 
+        
+
+        
+        <time class="post-date" datetime="2019-05-06T00:00:00Z">
+            6 May 2019
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/k8s-notes/">Kubernetes Notes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Table of Contents: * Basic Terms * Manifests * [Run a service]() * [Expose a service]() * [Secret, ConfigMap]() * [Volume and PersistentVolume ]() * [Autoscaling]() * [Helm]()
+Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine. context: a group of access parameters, a cluster, a namespace, a user. namespace: virtual cluster, use to separate resources across different environments like prod, dev, test. node: a virtual/physical machine pod: a set of containers to orchestrate, minimal object to scale container: docker container runs in pod Job: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration. <a class="read-more" href="/post/k8s-notes/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -557,43 +593,6 @@ Support sentence, word, for 17 languages source code for sentence tokenizer: ``p
 2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
 3. count rows with same value df[col].value_counts()
 4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option('display.expand_frame_repr', False) Other settings: pd.set_option('display.height', 1000) pd.set_option('display.max_rows', 500) pd.set_option('display.max_columns', 500) pd.set_option('display.width', 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &gt; n)   <a class="read-more" href="/post/pandascheatsheet/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            J
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-09-08T00:00:00Z">
-            8 Sep 2018
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/performance/">Performance</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Table of Contents: * [Edge Computing]() * [Content Delivery Network]() * Server Side * Gateway: nginx, openResty * long alive connection * optimized, cheap, fast * reverse proxy * load balancer * [Application Side]() * [Algorithms]()
-* Disk I/O * Async * Disk Performance
-* SSD * RAID 0, 1, 5, 10
-* Network I/O * zip message * use a better network card &amp; adaptor
- [Database Side]()  In memory cache -Redis/memcached high availability relational db fast complex query support tabular data no-relational db fast simple query flexible support many data types    <a class="read-more" href="/post/performance/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

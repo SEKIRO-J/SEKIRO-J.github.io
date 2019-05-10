@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Analysis of a few models"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Analysis of a few models &middot; Hello World, This Is J" />
+  	<meta property="og:site_name" content="Hello World, This Is J" />
+  	<meta property="og:url" content="/post/analysis-of-a-few-models/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-05-06T00:00:00Z" />
+
+    
+    
+
+    <title>Analysis of a few models &middot; Hello World, This Is J</title>
+
+    
+    <meta name="description" content="1. OLS Ordinary Least Squares, the most common estimation method for linear models, It&amp;rsquo;s good and simple, however, it has lots of assumptions. 1. the regr" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hello World, This Is J" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.55.5" />
+
+    <link rel="canonical" href="/post/analysis-of-a-few-models/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "/images/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "/images/avatar.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://sekiro-j.github.io/",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Analysis of a few models",
+    "name": "Analysis of a few models",
+    "wordCount":  248 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "/post/analysis-of-a-few-models/",
+    "datePublished": "2019-05-06T00:00Z",
+    "dateModified": "2019-05-06T00:00Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/post/analysis-of-a-few-models/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+     
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://www.linkedin.com/in/junjie-gu-37790011a/">LinkedIn</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/resume.pdf">Resume</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/SEKIRO-J">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/avatar.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Analysis of a few models</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2019-05-06T00:00:00Z">
+            May 6, 2019
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<h3 id="1-ols">1.  OLS</h3>
+
+<p>Ordinary Least Squares, the most common estimation method for linear models,
+It&rsquo;s good and simple, however, it has lots of assumptions.
+1. the regression model is linear in coefficients and the error term
+2. random sampling of observations
+3. No multi-collinearity (each variable  is independent)
+4. Error term is independent and identically distributed
+5. all independent variables are uncorrelated with the error term</p>
+
+<p>In brexit referendum data, there are 110 variables, there would be too much computation. and lots of variables are depend on each other, or have influence on others. so obviously the assumptions are not satisfied here.</p>
+
+<h3 id="2-decision-tree">2. Decision Tree</h3>
+
+<p>Decision tree is a model simple to implement and understand.
+It can be easily optimized it using random forest.
+It suits our data very well, it requires minimal data pre-processing and is able to handle many data types.
+And it&rsquo;s efficiency regards computation.</p>
+
+<h3 id="3-gradientboostingregressor">3. GradientBoostingRegressor</h3>
+
+<p>It also a good model to use,  it is able to handle all kinds of data type flexibly.
+It&rsquo;s a good replacement for OLS when amount of variables is large.</p>
+
+<h3 id="4-lasso">4.  LASSO</h3>
+
+<p>When the amount of variables is large, Lasso is able to extract the significant variables to simply to model.
+In our model, there are lots of variables, we don&rsquo;t know which are important and which are not important. Lasso does a great job help us to filter out those not significant variables. So I think Lasso would be a good model to use here.</p>
+
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTUxNjQzMjIyLC00MzU1MzcxNTEsMTg5Nz
+U5NDY4NiwtMjkxMzQ2NDM4LDg0MTkzMjc5MF19
+--></p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="/" style="background-image: url(/images/avatar.jpg)"><span class="hidden">J's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="/">J</a></h4>
+  
+  <p>Read <a href="/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    <span class="author-link icon-link"><a href="https://sekiro-j.github.io/">https://sekiro-j.github.io/</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Analysis%20of%20a%20few%20models&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fanalysis-of-a-few-models%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fanalysis-of-a-few-models%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fanalysis-of-a-few-models%2f&amp;description=Analysis%20of%20a%20few%20models"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fanalysis-of-a-few-models%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/k8s-notes/">
+          <section class="post">
+              <h2>Kubernetes Notes</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Hello World, This Is J</a> </section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

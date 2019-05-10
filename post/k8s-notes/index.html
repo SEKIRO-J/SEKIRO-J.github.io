@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Useful tool kit"/>
+<meta name="twitter:title" content="Kubernetes Notes"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Useful tool kit &middot; Hello World, This Is J" />
+  	<meta property="og:title" content="Kubernetes Notes &middot; Hello World, This Is J" />
   	<meta property="og:site_name" content="Hello World, This Is J" />
-  	<meta property="og:url" content="/post/toolkit/" />
+  	<meta property="og:url" content="/post/k8s-notes/" />
 
     
         
@@ -29,17 +29,15 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-04-08T00:00:00Z" />
+    <meta property="article:published_time" content="2019-04-19T00:00:00Z" />
 
     
     
 
-    <title>Useful tool kit &middot; Hello World, This Is J</title>
+    <title>Kubernetes Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="1. track memory usage line by line https://pypi.org/project/memory_profiler/
-2. track run time for each line https://pypi.org/project/line_profiler/
-3. regular " />
+    <meta name="description" content="Table of Contents: * Basic Terms * Manifests * [Run a service]() * [Expose a service]() * [Secret, ConfigMap]() * [Volume and PersistentVolume ]() * [Autoscalin" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -61,9 +59,9 @@
       
       
     
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.55.5" />
 
-    <link rel="canonical" href="/post/toolkit/" />
+    <link rel="canonical" href="/post/k8s-notes/" />
 
     
       
@@ -74,21 +72,21 @@
     "@type": "Article",
     "publisher": {
         "@type": "Organization",
-        "name": ,
-        "logo": /images/avatar.jpg
+        "name":  null ,
+        "logo": "/images/avatar.jpg"
     },
     "author": {
         "@type": "Person",
-        "name": ,
+        "name":  null ,
         
         "image": {
             "@type": "ImageObject",
-            "url": /images/avatar.jpg,
+            "url": "/images/avatar.jpg",
             "width": 250,
             "height": 250
         }, 
         
-        "url": https://sekiro-j.github.io/,
+        "url": "https://sekiro-j.github.io/",
         "sameAs": [
             
             
@@ -100,23 +98,23 @@
             
         ]
     },
-    "headline": Useful tool kit,
-    "name": Useful tool kit,
-    "wordCount": 29,
-    "timeRequired": "PT1M",
+    "headline": "Kubernetes Notes",
+    "name": "Kubernetes Notes",
+    "wordCount":  356 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": en
+      "alternateName": "en"
     },
-    "url": /post/toolkit/,
-    "datePublished": 2019-04-08T00:00Z,
-    "dateModified": 2019-04-08T00:00Z,
+    "url": "/post/k8s-notes/",
+    "datePublished": "2019-04-19T00:00Z",
+    "dateModified": "2019-04-19T00:00Z",
     
     
-    "description": ,
+    "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": /post/toolkit/
+        "@id": "/post/k8s-notes/"
     }
 }
     </script>
@@ -197,13 +195,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Useful tool kit</h1>
+        <h1 class="post-title">Kubernetes Notes</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2019-04-08T00:00:00Z">
-            Apr 8, 2019
+          <time class="post-date" datetime="2019-04-19T00:00:00Z">
+            Apr 19, 2019
           </time>
         
          
@@ -213,28 +211,61 @@
     <section class="post-content">
       
 
-<hr />
+<p>Table of Contents:
+* <a href="#Basic Terms/objects">Basic Terms</a>
+* <a href="#Manifests">Manifests</a>
+* [Run a service]()
+* [Expose a service]()
+* [Secret, ConfigMap]()
+* [Volume and PersistentVolume ]()
+* [Autoscaling]()
+* [Helm]()</p>
 
-<h4 id="1-track-memory-usage-line-by-line">1. track memory usage line by line</h4>
+<h3 id="basic-terms-objects">Basic Terms/objects</h3>
 
-<p><a href="https://pypi.org/project/memory_profiler/">https://pypi.org/project/memory_profiler/</a></p>
+<pre><code>cluster, context, namespace, node, pods.
+</code></pre>
 
-<h4 id="2-track-run-time-for-each-line">2. track run time for each line</h4>
+<ol>
+<li><strong>cluster</strong>: physical cluster of physical machine.</li>
+<li><strong>context</strong>: a group of access parameters,  a cluster, a namespace, a user.</li>
+<li><strong>namespace</strong>: virtual cluster, use to separate resources across different environments like prod, dev, test.</li>
+<li><strong>node</strong>: a virtual/physical machine</li>
+<li><strong>pod</strong>: a set of containers to orchestrate, minimal object to scale</li>
+<li><strong>container</strong>: docker container runs in pod</li>
+<li><strong>Job</strong>: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.</li>
+<li><strong>Service</strong>: a wrapper to pod, one or more pods to perform a service.</li>
+<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.
+10.<strong>Label</strong>: To classify different kind of pods.</li>
+</ol>
 
-<p><a href="https://pypi.org/project/line_profiler/">https://pypi.org/project/line_profiler/</a></p>
+<h3 id="manifests">Manifests</h3>
 
-<h4 id="3-regular-expression">3. regular expression</h4>
+<pre><code>ususally defined by .yaml or .json file
+- Deployment: deploy pods based on spec
+- ReplicaSet: deploy pods as replica 
+- DaemonSet:  deploy pods based on spec, ensure each node get one replica.
+- HorizontalPodsAutoscaler(HPA): Autoscaler for pods, make sure the resources usage keeps at same level.(50% CPU/Memory Usage)
+- Volume Claim Chain: To better manage a externel volume, to use a volume, must first claim it.
+- Network Policy: Define a network policy to a set of pods(by label) like which set of pods(by label) or users(by namespace) can access.
+</code></pre>
 
-<p><a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></p>
+<h3 id="access-pod-s-by-service">Access pod(s) by service</h3>
 
-<h4 id="4-google-word-to-vector-trained-model">4. google word to vector, trained model</h4>
+<ol>
+<li>Create a <code>Kind:Service</code> yaml, and define which pods your service is using (by using label)</li>
+</ol>
 
-<p>GoogleNews-vectors-negative300.bin
-<a href="https://code.google.com/archive/p/word2vec/">https://code.google.com/archive/p/word2vec/</a></p>
+<h3 id="expose-a-service">Expose a service</h3>
 
+<p>There are 3 types of manifests to expose a service
+1. <strong>NodePort</strong>:  Assign the service to a port, access the service by port number. Ex:<code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>, PortNumber is fixed, NodeIP could be any node that the service is running on. pods traffic is balanced in the same node, but not balanced in the different nodes . This is not good for production, but good for local testing by using kube-proxy.
+3. <strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.
+4. <strong>Ingress</strong> Recommended way for production.
+&gt; Written with <a href="https://stackedit.io/">StackEdit</a>.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDQ3NzE2OF19
--->
+eyJoaXN0b3J5IjpbNjQyODc5NDZdfQ==
+--></p>
 
     </section>
 
@@ -273,19 +304,19 @@ eyJoaXN0b3J5IjpbLTEwMDQ3NzE2OF19
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Useful%20tool%20kit&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2ftoolkit%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Kubernetes%20Notes&nbsp;-&nbsp;Hello%20World%2c%20This%20Is%20J&amp;url=%2fpost%2fk8s-notes%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2ftoolkit%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fk8s-notes%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2ftoolkit%2f&amp;description=Useful%20tool%20kit"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fk8s-notes%2f&amp;description=Kubernetes%20Notes"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2ftoolkit%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fk8s-notes%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -309,17 +340,17 @@ eyJoaXN0b3J5IjpbLTEwMDQ3NzE2OF19
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/pythoncheatsheet/">
+      <a class="read-next-story" style="no-cover" href="/post/analysis-of-a-few-models/">
           <section class="post">
-              <h2>Python CheatSheet</h2>
+              <h2>Analysis of a few models</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/post/pandascheatsheet/">
+      <a class="read-next-story prev" style="no-cover" href="/post/tcp/">
           <section class="post">
-              <h2>Pandas Cheat Sheet</h2>
+              <h2>Difference between Multi-Processing, Multi-threading and Coroutine</h2>
           </section>
       </a>
   
