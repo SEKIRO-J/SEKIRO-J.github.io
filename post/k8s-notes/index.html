@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-04-19T00:00:00Z" />
+    <meta property="article:published_time" content="2019-05-02T00:00:00Z" />
 
     
     
@@ -37,7 +37,8 @@
     <title>Kubernetes Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="Table of Contents: * Basic Terms * Manifests * [Run a service]() * [Expose a service]() * [Secret, ConfigMap]() * [Volume and PersistentVolume ]() * [Autoscalin" />
+    <meta name="description" content="Table of Contents: * Basic Terms * Manifests * [Expose a service]() * [Helm]()
+Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -100,15 +101,15 @@
     },
     "headline": "Kubernetes Notes",
     "name": "Kubernetes Notes",
-    "wordCount":  356 ,
+    "wordCount":  337 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "/post/k8s-notes/",
-    "datePublished": "2019-04-19T00:00Z",
-    "dateModified": "2019-04-19T00:00Z",
+    "datePublished": "2019-05-02T00:00Z",
+    "dateModified": "2019-05-02T00:00Z",
     
     
     "description": "",
@@ -200,8 +201,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2019-04-19T00:00:00Z">
-            Apr 19, 2019
+          <time class="post-date" datetime="2019-05-02T00:00:00Z">
+            May 2, 2019
           </time>
         
          
@@ -212,13 +213,9 @@
       
 
 <p>Table of Contents:
-* <a href="#Basic Terms/objects">Basic Terms</a>
+* <a href="#Basic-Terms/objects">Basic Terms</a>
 * <a href="#Manifests">Manifests</a>
-* [Run a service]()
 * [Expose a service]()
-* [Secret, ConfigMap]()
-* [Volume and PersistentVolume ]()
-* [Autoscaling]()
 * [Helm]()</p>
 
 <h3 id="basic-terms-objects">Basic Terms/objects</h3>
@@ -250,22 +247,26 @@
 - Network Policy: Define a network policy to a set of pods(by label) like which set of pods(by label) or users(by namespace) can access.
 </code></pre>
 
-<h3 id="access-pod-s-by-service">Access pod(s) by service</h3>
+<h3 id="expose-access-pod-s-by-service">Expose, Access pod(s) by service</h3>
 
 <ol>
 <li>Create a <code>Kind:Service</code> yaml, and define which pods your service is using (by using label)</li>
 </ol>
 
-<h3 id="expose-a-service">Expose a service</h3>
+<p>There are 3 types of manifests to expose a service</p>
 
-<p>There are 3 types of manifests to expose a service
-1. <strong>NodePort</strong>:  Assign the service to a port, access the service by port number. Ex:<code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>, PortNumber is fixed, NodeIP could be any node that the service is running on. pods traffic is balanced in the same node, but not balanced in the different nodes . This is not good for production, but good for local testing by using kube-proxy.
-3. <strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.
-4. <strong>Ingress</strong> Recommended way for production.
+<ol>
+<li><p><strong>NodePort</strong>:  Assign the service to a port, access the service by port number. Ex:<code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>, PortNumber is fixed, NodeIP could be any node that the service is running on. pods traffic is balanced in the same node, but not balanced in the different nodes . This is not good for production, but good for local testing by using kube-proxy.</p></li>
+
+<li><p><strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.</p></li>
+
+<li><p><strong>Ingress</strong> Recommended way for production.
 &gt; Written with <a href="https://stackedit.io/">StackEdit</a>.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQyODc5NDZdfQ==
---></p>
+eyJoaXN0b3J5IjpbLTEzMzM2MTM0OCwtODg0MzMyNjQxLDEyNz
+AxNDE2MzEsMzg4Nzc2MjgwLDY0Mjg3OTQ2XX0=
+--></p></li>
+</ol>
 
     </section>
 
