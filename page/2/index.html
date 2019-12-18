@@ -236,6 +236,8 @@
     
         
     
+        
+    
 
     
 
@@ -257,15 +259,67 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/post/pandascheatsheet/">Pandas Cheat Sheet</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 1. Collect dataframe as dictionary .set_index([&lsquo;a&rsquo;,&lsquo;b&rsquo;]).T.to_dict(&lsquo;list&rsquo;)
+2. Read in csv file format(transpose) https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+3. count rows with same value df[col].value_counts()
+4. display columns unlimit ( equivalent to spark df, with limit=False) pd.set_option('display.expand_frame_repr', False) Other settings: pd.set_option('display.height', 1000) pd.set_option('display.max_rows', 500) pd.set_option('display.max_columns', 500) pd.set_option('display.width', 1000)  5. remove all the rows with a value occur less than n times df[df.groupby(value).uid.transform(len) &gt; n] or: df.groupby(by=value).filter(lambda x: len(x) &gt; n)   <a class="read-more" href="/post/pandascheatsheet/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="/images/avatar.jpg" alt="Author image" nopin="nopin" />
+            
+            
+            
+            J
+                 
+        
+
+        
+        <time class="post-date" datetime="2018-09-08T00:00:00Z">
+            8 Sep 2018
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/post/performance/">Performance</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Table of Contents: * [Edge Computing]() * [Content Delivery Network]() * Server Side * Gateway: nginx, openResty * long alive connection * optimized, cheap, fast * reverse proxy * load balancer * [Application Side]() * [Algorithms]()
-* Disk I/O * Async * Disk Performance
-* SSD * RAID 0, 1, 5, 10
-* Network I/O * zip message * use a better network card &amp; adaptor
- [Database Side]()  In memory cache -Redis/memcached high availability relational db fast complex query support tabular data no-relational db fast simple query flexible support many data types    <a class="read-more" href="/post/performance/">&raquo;</a></p>
+            <p>Table of Contents:
+* [Edge Computing]()
+* [Content Delivery Network]()
+* Server Side
+* Gateway: nginx, openResty
+* long alive connection
+* optimized, cheap, fast
+* reverse proxy
+* load balancer
+* [Application Side]()
+* [Algorithms]()
+* Disk I/O
+* Async
+* Disk Performance
+* SSD
+* RAID 0, 1, 5, 10
+* Network I/O
+* zip message
+* use a better network card &amp; adaptor
+ [Database Side]()
+ In memory cache -Redis/memcached <a class="read-more" href="/post/performance/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -298,8 +352,12 @@
     </header>
     <section class="post-excerpt">
         
-            <p>Mostly Hadoop, Spark As well as concepts, &mdash;&mdash;&mdash;&mdash;- think at scale!
-Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-calcualtion, reuse same rdd as much as you can,  use cache() to prevent re calculation, (cache rdd in memory) use persist() to manually set different level of cache, ex.StorageLevel.MEMORY_AND_DISK_SER others:
+            <p>Mostly Hadoop, Spark
+As well as concepts, &mdash;&mdash;&mdash;&mdash;- think at scale!
+Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-calcualtion, reuse same rdd as much as you can,  use cache() to prevent re calculation, (cache rdd in memory)
+ use persist() to manually set different level of cache,
+ ex.StorageLevel.MEMORY_AND_DISK_SER
+ others:
 MEMORY_ONLY
 MEMORY_AND_DISK
 MEMORY_ONLY_SER
@@ -338,11 +396,13 @@ MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to di
         
             <p>Java NOtes and cheat sheet I wrote during work and academia
 1. ArrayList ArrayList is implemented based on primitive array
-Feature: ArrayList myarrlist = new ArrayList()
+Feature:
+ArrayList myarrlist = new ArrayList()
 1.Type Satety ArrayList provides stronger type safety ensurance than array
 https://coderanch.com/t/625190/certification/Array-ArrayList-Thread-safety-Type
 2. Flexibility ArrayList has Dynamic, and a better interface
-3. Size vs length Size is the capacity length is the actually length
+3. Size vs length Size is the capacity
+length is the actually length
 4. Multi-dimension arraylist doesn&rsquo;t support multi-dimension, array does
 5, primitive types ArrayList doesn&rsquo;t support primitive types <a class="read-more" href="/post/java-notes/">&raquo;</a></p>
         
@@ -412,7 +472,8 @@ Therefore I want to write some Scala notes. <a class="read-more" href="/post/sca
     </header>
     <section class="post-excerpt">
         
-            <p>PythonNotes Cheat notes for Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc <a class="read-more" href="/post/readme/">&raquo;</a></p>
+            <p>PythonNotes Cheat notes for
+Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc <a class="read-more" href="/post/readme/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

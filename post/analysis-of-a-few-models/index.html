@@ -37,7 +37,9 @@
     <title>Analysis of a few models &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="1. OLS Ordinary Least Squares, the most common estimation method for linear models, It&amp;rsquo;s good and simple, however, it has lots of assumptions. 1. the regr" />
+    <meta name="description" content="1. OLS Ordinary Least Squares, the most common estimation method for linear models,
+It&amp;rsquo;s good and simple, however, it has lots of assumptions.
+1. the regr" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -215,35 +217,35 @@
 
 <h3 id="1-ols">1.  OLS</h3>
 
-<p>Ordinary Least Squares, the most common estimation method for linear models,
-It&rsquo;s good and simple, however, it has lots of assumptions.
-1. the regression model is linear in coefficients and the error term
-2. random sampling of observations
-3. No multi-collinearity (each variable  is independent)
-4. Error term is independent and identically distributed
+<p>Ordinary Least Squares, the most common estimation method for linear models,<br />
+It&rsquo;s good and simple, however, it has lots of assumptions.<br />
+1. the regression model is linear in coefficients and the error term<br />
+2. random sampling of observations<br />
+3. No multi-collinearity (each variable  is independent)<br />
+4. Error term is independent and identically distributed<br />
 5. all independent variables are uncorrelated with the error term</p>
 
 <p>In brexit referendum data, there are 110 variables, there would be too much computation. and lots of variables are depend on each other, or have influence on others. so obviously the assumptions are not satisfied here.</p>
 
 <h3 id="2-decision-tree">2. Decision Tree</h3>
 
-<p>Decision tree is a model simple to implement and understand.
-It can be easily optimized it using random forest.
-It suits our data very well, it requires minimal data pre-processing and is able to handle many data types.
+<p>Decision tree is a model simple to implement and understand.<br />
+It can be easily optimized it using random forest.<br />
+It suits our data very well, it requires minimal data pre-processing and is able to handle many data types.<br />
 And it&rsquo;s efficiency regards computation.</p>
 
 <h3 id="3-gradientboostingregressor">3. GradientBoostingRegressor</h3>
 
-<p>It also a good model to use,  it is able to handle all kinds of data type flexibly.
+<p>It also a good model to use,  it is able to handle all kinds of data type flexibly.<br />
 It&rsquo;s a good replacement for OLS when amount of variables is large.</p>
 
 <h3 id="4-lasso">4.  LASSO</h3>
 
-<p>When the amount of variables is large, Lasso is able to extract the significant variables to simply to model.
+<p>When the amount of variables is large, Lasso is able to extract the significant variables to simply to model.<br />
 In our model, there are lots of variables, we don&rsquo;t know which are important and which are not important. Lasso does a great job help us to filter out those not significant variables. So I think Lasso would be a good model to use here.</p>
 
 <blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbOTUxNjQzMjIyLC00MzU1MzcxNTEsMTg5Nz
 U5NDY4NiwtMjkxMzQ2NDM4LDg0MTkzMjc5MF19
@@ -322,6 +324,13 @@ U5NDY4NiwtMjkxMzQ2NDM4LDg0MTkzMjc5MF19
 
 
   <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/post/pysparkcheatsheet/">
+          <section class="post">
+              <h2>Pyspark</h2>
+              
+          </section>
+      </a>
   
   
       <a class="read-next-story prev" style="no-cover" href="/post/k8s-notes/">

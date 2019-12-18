@@ -100,7 +100,7 @@
     },
     "headline": "Python CheatSheet",
     "name": "Python CheatSheet",
-    "wordCount":  249 ,
+    "wordCount":  328 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
@@ -290,6 +290,32 @@ The later ones returns a range object( a iterable object similar to iteratorbut 
 pip2 install -r requirements.txt
 python 3.x:
 pip3 install -r requirements.txt
+</code></pre>
+
+<h3 id="8-minheap-and-maxheap">8. minHeap and maxHeap</h3>
+
+<p>import heapq<br />
+mylis = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]<br />
+heapq.heapify(mylis)             # for a min heap<br />
+heapq.heappop(mylis)      # pop from minheap</p>
+
+<p>heapq._heapify_max(mylis)<br />
+heapq._heappop_max(mylis)</p>
+
+<h3 id="9-init-a-nxm-2d-array">9. init a NxM 2d array</h3>
+
+<p>n, m = 8, 5;<br />
+matrix = [[0 for x in range(m)] for y in range(n)]</p>
+
+<h3 id="10-topological-ordering">10. topological ordering</h3>
+
+<pre><code class="language-Python">import networkx as nx
+
+G = nx.DiGraph()
+G.add_edges_from([(0, 2), (1, 2), (2, 3)])
+all_topological_sorts = list(nx.algorithms.dag.all_topological_sorts(G))
+print([0, 1, 2, 3] in all_topological_sorts) # True
+print([2, 3, 1, 0] in all_topological_sorts) # False
 </code></pre>
 
 <!--stackedit_data:

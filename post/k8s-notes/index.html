@@ -37,7 +37,11 @@
     <title>Kubernetes Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="Table of Contents: * Basic Terms * Manifests * [Expose a service]() * [Helm]()
+    <meta name="description" content="Table of Contents:
+* Basic Terms
+* Manifests
+* [Expose a service]()
+* [Helm]()
 Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical " />
     
 
@@ -212,10 +216,10 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
     <section class="post-content">
       
 
-<p>Table of Contents:
-* <a href="#Basic-Terms/objects">Basic Terms</a>
-* <a href="#Manifests">Manifests</a>
-* [Expose a service]()
+<p>Table of Contents:<br />
+* <a href="#Basic-Terms/objects">Basic Terms</a><br />
+* <a href="#Manifests">Manifests</a><br />
+* [Expose a service]()<br />
 * [Helm]()</p>
 
 <h3 id="basic-terms-objects">Basic Terms/objects</h3>
@@ -224,16 +228,18 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 </code></pre>
 
 <ol>
-<li><strong>cluster</strong>: physical cluster of physical machine.</li>
-<li><strong>context</strong>: a group of access parameters,  a cluster, a namespace, a user.</li>
-<li><strong>namespace</strong>: virtual cluster, use to separate resources across different environments like prod, dev, test.</li>
-<li><strong>node</strong>: a virtual/physical machine</li>
-<li><strong>pod</strong>: a set of containers to orchestrate, minimal object to scale</li>
-<li><strong>container</strong>: docker container runs in pod</li>
-<li><strong>Job</strong>: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.</li>
-<li><strong>Service</strong>: a wrapper to pod, one or more pods to perform a service.</li>
-<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.
-10.<strong>Label</strong>: To classify different kind of pods.</li>
+<li><strong>cluster</strong>: physical cluster of physical machine.<br /></li>
+<li><strong>context</strong>: a group of access parameters,  a cluster, a namespace, a user.<br /></li>
+<li><strong>namespace</strong>: virtual cluster, use to separate resources across different environments like prod, dev, test.<br /></li>
+<li><strong>node</strong>: a virtual/physical machine<br /></li>
+<li><strong>pod</strong>: a set of containers to orchestrate, minimal object to scale<br /></li>
+<li><strong>container</strong>: docker container runs in pod<br /></li>
+<li><strong>Job</strong>: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.<br /></li>
+<li><strong>Service</strong>: a wrapper to pod, one or more pods to perform a service.<br /></li>
+<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.<br />
+10.<strong>Label</strong>: To classify different kind of pods.<br />
+<br />
+<br /></li>
 </ol>
 
 <h3 id="manifests">Manifests</h3>
@@ -250,7 +256,8 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 <h3 id="expose-access-pod-s-by-service">Expose, Access pod(s) by service</h3>
 
 <ol>
-<li>Create a <code>Kind:Service</code> yaml, and define which pods your service is using (by using label)</li>
+<li>Create a <code>Kind:Service</code> yaml, and define which pods your service is using (by using label)<br />
+<br /></li>
 </ol>
 
 <p>There are 3 types of manifests to expose a service</p>
@@ -260,8 +267,8 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 
 <li><p><strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.</p></li>
 
-<li><p><strong>Ingress</strong> Recommended way for production.
-&gt; Written with <a href="https://stackedit.io/">StackEdit</a>.
+<li><p><strong>Ingress</strong> Recommended way for production.<br />
+&gt; Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTEzMzM2MTM0OCwtODg0MzMyNjQxLDEyNz
 AxNDE2MzEsMzg4Nzc2MjgwLDY0Mjg3OTQ2XX0=

@@ -241,32 +241,34 @@ all do
 <h4 id="note">Note:</h4>
 
 <ul>
-<li>map on iterator is lazy, put &ldquo;toList&rdquo; in the end will fix it.</li>
-<li>but should use foreach, as it is designed for side effects(won&rsquo;t allow laziness)</li>
+<li>map on iterator is lazy, put &ldquo;toList&rdquo; in the end will fix it.<br /></li>
+<li>but should use foreach, as it is designed for side effects(won&rsquo;t allow laziness)<br />
+<br /></li>
 </ul>
 
 <h3 id="2-eq-and-equals">2.   ==, eq, and equals</h3>
 
 <ul>
-<li>equals in scala is same as equals in java, throw null exception</li>
-<li>== check for null, then redirect to equals</li>
-<li>eq is scala equivalent to == in java</li>
+<li>equals in scala is same as equals in java, throw null exception<br /></li>
+<li>== check for null, then redirect to equals<br /></li>
+<li>eq is scala equivalent to == in java<br />
+<br /></li>
 </ul>
 
-<p>Examples
-- 1 equals 2 will return false, as it redirects to Integer.equals(&hellip;)
-- 1 == 2 will return false, as it redirects to Integer.equals(&hellip;)
-- 1 eq 2 will not compile, as it requires both arguments to be of type AnyRef
-- new ArrayList() equals new ArrayList() will return true, as it checks the content
-- new ArrayList() == new ArrayList() will return true, as it redirects to equals(&hellip;)
-- new ArrayList() eq new ArrayList() will return false, as both arguments are different instances
-- foo equals foo will return true, unless foo is null, then will throw a NullPointerException
-- foo == foo will return true, even if foo is null
+<p>Examples<br />
+- 1 equals 2 will return false, as it redirects to Integer.equals(&hellip;)<br />
+- 1 == 2 will return false, as it redirects to Integer.equals(&hellip;)<br />
+- 1 eq 2 will not compile, as it requires both arguments to be of type AnyRef<br />
+- new ArrayList() equals new ArrayList() will return true, as it checks the content<br />
+- new ArrayList() == new ArrayList() will return true, as it redirects to equals(&hellip;)<br />
+- new ArrayList() eq new ArrayList() will return false, as both arguments are different instances<br />
+- foo equals foo will return true, unless foo is null, then will throw a NullPointerException<br />
+- foo == foo will return true, even if foo is null<br />
 - foo eq foo will return true, since both arguments link to the same reference</p>
 
 <h3 id="3-a-very-good-command-line-input-parse-library">3. A very good command line input parse library</h3>
 
-<p>import org.rogach.scallop._
+<p>import org.rogach.scallop._<br />
 <a href="https://github.com/scallop/scallop">https://github.com/scallop/scallop</a></p>
 
 <h3 id="4-scala-split">4. scala split</h3>
@@ -315,7 +317,8 @@ Split by regex: split(String: regex)</p>
 <h4 id="note-1">Note:</h4>
 
 <ul>
-<li>explicit type, need bracket. reduceByKey((x:type, y:type)=&gt; &hellip; )<br /></li>
+<li>explicit type, need bracket. reduceByKey((x:type, y:type)=&gt; &hellip; )<br />
+<br /></li>
 </ul>
 
 <h3 id="2-read-parquet-files">2. read parquet files</h3>
@@ -339,7 +342,7 @@ SparkContext as sc
 
 <h4 id="1-return-rows">1. return rows</h4>
 
-<p>head(n = 5), default = 5
+<p>head(n = 5), default = 5<br />
 get first n row</p>
 
 <h4 id="2-return-unit">2. return Unit</h4>
@@ -364,7 +367,7 @@ Example: <a href="https://img-blog.csdn.net/20161012231742058">https://img-blog.
 
 <h3 id="6-union-2-rdd-and-group-by-key">6. union 2 rdd and group by key</h3>
 
-<p>rdd1.cogroup(rdd2): (key, iter1, iter2)
+<p>rdd1.cogroup(rdd2): (key, iter1, iter2)<br />
 <a href="https://spark.apache.org/docs/2.1.1/api/java/org/apache/spark/rdd/PairRDDFunctions.html">https://spark.apache.org/docs/2.1.1/api/java/org/apache/spark/rdd/PairRDDFunctions.html</a></p>
 
 <h3 id="7-sortbykey-costumize-ordering-function">7. sortByKey costumize ordering function</h3>
@@ -374,7 +377,7 @@ Example: <a href="https://img-blog.csdn.net/20161012231742058">https://img-blog.
 <h2 id="questions">Questions</h2>
 
 <blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTEzNTA5MTI0NF19
 --></p>

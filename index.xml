@@ -6,10 +6,19 @@
     <description>Recent content on Hello World, This Is J</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pyspark</title>
+      <link>/post/pysparkcheatsheet/</link>
+      <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pysparkcheatsheet/</guid>
+      <description>1. initilaztion 1. spark session from pyspark.sql import SparkSession spark = SparkSession \ .builder \ .appName(&amp;quot;name&amp;quot;) \ .config(&amp;quot;spark.some.config.option&amp;quot;, &amp;quot;some-value&amp;quot;) \ .getOrCreate()  2. spark context 1. from spark session sc = spark.sparkContext  2. from spark context conf = SparkConf().setAppName(&amp;quot;KMeans&amp;quot;).setMaster(&amp;quot;local[*]&amp;quot;) sc = SparkContext(conf =conf) or sc = SparkContext.getOrCreate(conf)  2. paritition by index .mapPartitionsWithIndex(lambda idx, it: islice(it, 1, None) if idx == 0 else it)\ this get rid of the first line(rdd) in the file.</description>
+    </item>
     
     <item>
       <title>Analysis of a few models</title>
@@ -17,7 +26,13 @@
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/analysis-of-a-few-models/</guid>
-      <description>1. OLS Ordinary Least Squares, the most common estimation method for linear models, It&amp;rsquo;s good and simple, however, it has lots of assumptions. 1. the regression model is linear in coefficients and the error term 2. random sampling of observations 3. No multi-collinearity (each variable is independent) 4. Error term is independent and identically distributed 5. all independent variables are uncorrelated with the error term
+      <description>1. OLS Ordinary Least Squares, the most common estimation method for linear models,
+It&amp;rsquo;s good and simple, however, it has lots of assumptions.
+1. the regression model is linear in coefficients and the error term
+2. random sampling of observations
+3. No multi-collinearity (each variable is independent)
+4. Error term is independent and identically distributed
+5. all independent variables are uncorrelated with the error term
 In brexit referendum data, there are 110 variables, there would be too much computation.</description>
     </item>
     
@@ -27,8 +42,16 @@ In brexit referendum data, there are 110 variables, there would be too much comp
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/k8s-notes/</guid>
-      <description>Table of Contents: * Basic Terms * Manifests * [Expose a service]() * [Helm]()
-Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine. context: a group of access parameters, a cluster, a namespace, a user. namespace: virtual cluster, use to separate resources across different environments like prod, dev, test. node: a virtual/physical machine pod: a set of containers to orchestrate, minimal object to scale container: docker container runs in pod Job: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.</description>
+      <description>Table of Contents:
+* Basic Terms
+* Manifests
+* [Expose a service]()
+* [Helm]()
+Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine.
+ context: a group of access parameters, a cluster, a namespace, a user.
+ namespace: virtual cluster, use to separate resources across different environments like prod, dev, test.
+ node: a virtual/physical machine
+ pod: a set of containers to orchestrate, minimal object to scale</description>
     </item>
     
     <item>
@@ -37,8 +60,10 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
       <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/tcp/</guid>
-      <description>How is a computer program executed? A program needs at least one thread to run on. And a coroutine live in a thread, a thread lives in process, a process lives in core, a core lives in a CPU.
- Multi-Processing usually refer to many processes execute in parallel. Process is smallest resource management unit, different process share different resource. Multi-Threading usually refer to many threads execute concurrently, when there are idle cores, threads can use idle cores to run in parallel.</description>
+      <description>How is a computer program executed? A program needs at least one thread to run on.
+And a coroutine live in a thread, a thread lives in process, a process lives in core, a core lives in a CPU.
+ Multi-Processing usually refer to many processes execute in parallel. Process is smallest resource management unit, different process share different resource.
+ Multi-Threading usually refer to many threads execute concurrently, when there are idle cores, threads can use idle cores to run in parallel.</description>
     </item>
     
     <item>
@@ -47,10 +72,13 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
       <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/sublimetoolkit/</guid>
-      <description> Useful sublime packages, steps to install:
+      <description>Useful sublime packages,
+steps to install:
 1. open sublime 2. open command palette `(Ctrl+Shift+P for Windows/Linux, Cmd+Shift+P for Mac OS)` 3. type `install`Search for _Package Control:_ Install Package and hit Enter. 4 type `&amp;quot;package_name&amp;quot; `, find the package and hit enter  1.gitgutter very useful tool if you are working with a git repo
 2.SumlineLinter &amp;amp; SumlineLinter-flake8 linter
-3. KiteSublime to search documentations ``` &amp;gt; Written with StackEdit. </description>
+3. KiteSublime to search documentations
+```
+&amp;gt; Written with StackEdit.</description>
     </item>
     
     <item>
@@ -72,7 +100,8 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 1. track memory usage line by line https://pypi.org/project/memory_profiler/
 2. track run time for each line https://pypi.org/project/line_profiler/
 3. regular expression https://docs.python.org/3/library/re.html
-4. google word to vector, trained model GoogleNews-vectors-negative300.bin https://code.google.com/archive/p/word2vec/
+4. google word to vector, trained model GoogleNews-vectors-negative300.bin
+https://code.google.com/archive/p/word2vec/
 5. trace execution for each line/function flow python -m trace --count -C . somefile.py ...  https://docs.python.org/3.7/library/trace.html
 6. get time analysis for a statement execution usage: python -m timeit &#39;stmt&#39; # number = 10000 or: timeit.</description>
     </item>
@@ -95,7 +124,8 @@ Pass lvalue as parameter, you can just refer to its address, we know its memory 
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/md-dl-notes/</guid>
-      <description>Notes for machine learning and deep learning models, design and training techniques Mainly includes: CNN, RNN(LTSM)
+      <description>Notes for machine learning and deep learning models, design and training techniques
+Mainly includes: CNN, RNN(LTSM)
 ensemble techniques
 activation functions
 1. deep learning concept 1. LTSM, a type of RNN, most successful RNNs are LTSM RNNs
@@ -105,7 +135,7 @@ Example: Rakuten data challenge
 Character-level tokenization
 Ensembling:
 Bidirectional training
-2. Ensemble learning  Bagging(bootstrap aggregating): randomly select N training sets, then vote</description>
+2. Ensemble learning  Bagging(bootstrap aggregating):</description>
     </item>
     
     <item>
@@ -114,9 +144,14 @@ Bidirectional training
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/nltk/</guid>
-      <description> 1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
-Support sentence, word, for 17 languages source code for sentence tokenizer: ``python def sent_tokenize(text, language=&#39;english&#39;): &amp;quot;&amp;quot;&amp;quot; Return a sentence-tokenized copy of *text*, using NLTK&#39;s recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer` for the specified language).
-:param text: text to split into sentences :param language: the model name in the Punkt corpus &amp;quot;&amp;quot;&amp;quot; tokenizer = load(&#39;tokenizers/punkt/{0}.pickle&#39;.format(language)) return tokenizer.tokenize(text)  word tokenizer: word_tokenize(text, language=&amp;lsquo;english&amp;rsquo;, preserve_line=False) perserve_line == false, then call sentence tokenizer first, otherwise, don&amp;rsquo;t </description>
+      <description>1. tokenize https://www.nltk.org/_modules/nltk/tokenize.html
+Support sentence, word, for 17 languages
+source code for sentence tokenizer:
+``python def sent_tokenize(text, language=&#39;english&#39;): &amp;quot;&amp;quot;&amp;quot; Return a sentence-tokenized copy of *text*, using NLTK&#39;s recommended sentence tokenizer (currently :class:.PunktSentenceTokenizer`
+for the specified language).
+:param text: text to split into sentences :param language: the model name in the Punkt corpus &amp;quot;&amp;quot;&amp;quot; tokenizer = load(&#39;tokenizers/punkt/{0}.pickle&#39;.format(language)) return tokenizer.tokenize(text)  word tokenizer:
+word_tokenize(text, language=&amp;lsquo;english&amp;rsquo;, preserve_line=False)
+perserve_line == false, then call sentence tokenizer first, otherwise, don&amp;rsquo;t</description>
     </item>
     
     <item>
@@ -137,11 +172,27 @@ Support sentence, word, for 17 languages source code for sentence tokenizer: ``p
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/performance/</guid>
-      <description>Table of Contents: * [Edge Computing]() * [Content Delivery Network]() * Server Side * Gateway: nginx, openResty * long alive connection * optimized, cheap, fast * reverse proxy * load balancer * [Application Side]() * [Algorithms]()
-* Disk I/O * Async * Disk Performance
-* SSD * RAID 0, 1, 5, 10
-* Network I/O * zip message * use a better network card &amp;amp; adaptor
- [Database Side]()  In memory cache -Redis/memcached high availability relational db fast complex query support tabular data no-relational db fast simple query flexible support many data types   </description>
+      <description>Table of Contents:
+* [Edge Computing]()
+* [Content Delivery Network]()
+* Server Side
+* Gateway: nginx, openResty
+* long alive connection
+* optimized, cheap, fast
+* reverse proxy
+* load balancer
+* [Application Side]()
+* [Algorithms]()
+* Disk I/O
+* Async
+* Disk Performance
+* SSD
+* RAID 0, 1, 5, 10
+* Network I/O
+* zip message
+* use a better network card &amp;amp; adaptor
+ [Database Side]()
+ In memory cache -Redis/memcached</description>
     </item>
     
     <item>
@@ -150,8 +201,12 @@ Support sentence, word, for 17 languages source code for sentence tokenizer: ``p
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/spark-hadoop-notes/</guid>
-      <description>Mostly Hadoop, Spark As well as concepts, &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- think at scale!
-Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-calcualtion, reuse same rdd as much as you can,  use cache() to prevent re calculation, (cache rdd in memory) use persist() to manually set different level of cache, ex.StorageLevel.MEMORY_AND_DISK_SER others:
+      <description>Mostly Hadoop, Spark
+As well as concepts, &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- think at scale!
+Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-calcualtion, reuse same rdd as much as you can,  use cache() to prevent re calculation, (cache rdd in memory)
+ use persist() to manually set different level of cache,
+ ex.StorageLevel.MEMORY_AND_DISK_SER
+ others:
 MEMORY_ONLY
 MEMORY_AND_DISK
 MEMORY_ONLY_SER
@@ -166,11 +221,13 @@ MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to di
       <guid>/post/java-notes/</guid>
       <description>Java NOtes and cheat sheet I wrote during work and academia
 1. ArrayList ArrayList is implemented based on primitive array
-Feature: ArrayList myarrlist = new ArrayList()
+Feature:
+ArrayList myarrlist = new ArrayList()
 1.Type Satety ArrayList provides stronger type safety ensurance than array
 https://coderanch.com/t/625190/certification/Array-ArrayList-Thread-safety-Type
 2. Flexibility ArrayList has Dynamic, and a better interface
-3. Size vs length Size is the capacity length is the actually length
+3. Size vs length Size is the capacity
+length is the actually length
 4. Multi-dimension arraylist doesn&amp;rsquo;t support multi-dimension, array does
 5, primitive types ArrayList doesn&amp;rsquo;t support primitive types</description>
     </item>
@@ -192,7 +249,8 @@ Therefore I want to write some Scala notes.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/post/readme/</guid>
-      <description>PythonNotes Cheat notes for Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc</description>
+      <description>PythonNotes Cheat notes for
+Pyspark, Pandas, Numpy, NLTK, Keras, Tensorflow and etc</description>
     </item>
     
   </channel>

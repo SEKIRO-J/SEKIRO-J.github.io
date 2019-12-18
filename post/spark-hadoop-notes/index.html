@@ -37,7 +37,8 @@
     <title>DistributedComputing Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="Mostly Hadoop, Spark As well as concepts, &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- think at scale!
+    <meta name="description" content="Mostly Hadoop, Spark
+As well as concepts, &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- think at scale!
 Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-" />
     
 
@@ -212,7 +213,7 @@ Spark 1. Code Optimization 1. avoid creating duplicate rdds 2. avoid re-" />
     <section class="post-content">
       
 
-<p>Mostly Hadoop, Spark
+<p>Mostly Hadoop, Spark<br />
 As well as concepts, &mdash;&mdash;&mdash;&mdash;- think at scale!</p>
 
 <h2 id="spark">Spark</h2>
@@ -224,9 +225,9 @@ As well as concepts, &mdash;&mdash;&mdash;&mdash;- think at scale!</p>
 <h4 id="2-avoid-re-calcualtion-reuse-same-rdd-as-much-as-you-can">2. avoid re-calcualtion, reuse same rdd as much as you can,</h4>
 
 <ul>
-<li>use cache() to prevent re calculation, (cache rdd in memory)</li>
-<li>use persist() to manually set different level of cache,</li>
-<li>ex.StorageLevel.MEMORY_AND_DISK_SER</li>
+<li>use cache() to prevent re calculation, (cache rdd in memory)<br /></li>
+<li>use persist() to manually set different level of cache,<br /></li>
+<li>ex.StorageLevel.MEMORY_AND_DISK_SER<br /></li>
 <li>others:<br />
 MEMORY_ONLY<br />
 MEMORY_AND_DISK<br />
@@ -261,8 +262,8 @@ use reduceByKey and aggregateByKey rather than groupByKey (no combiners)</p>
 
 <h4 id="1">1.</h4>
 
-<p><a href="https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory">https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory</a>
-<a href="http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/">http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/</a>
+<p><a href="https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory">https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory</a><br />
+<a href="http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/">http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/</a><br />
 <a href="http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/">http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/</a></p>
 
 <h3 id="3-sparksession-and-sparkcontext">3. SparkSession and SparkContext</h3>
@@ -281,7 +282,7 @@ You can use SparkContext by directly initilaztion or use SparkSession.sparkConte
 
 <p>rdd.coalesce(1, shuffle = true).saveAsTextFile() is the best simple option as it will keep the processing of upstream tasks parallel and then only perform the shuffle to one node (rdd.repartition(1).saveAsTextFile() is an exact synonym).</p>
 
-<p>rdd.saveAsSingleTextFile() as provided bellow additionally allows one to store the rdd in a single file with a specific name while keeping the parallelism properties of rdd.coalesce(1, shuffle = true).saveAsTextFile().
+<p>rdd.saveAsSingleTextFile() as provided bellow additionally allows one to store the rdd in a single file with a specific name while keeping the parallelism properties of rdd.coalesce(1, shuffle = true).saveAsTextFile().<br />
 <a href="https://stackoverflow.com/questions/24371259/how-to-make-saveastextfile-not-split-output-into-multiple-file">https://stackoverflow.com/questions/24371259/how-to-make-saveastextfile-not-split-output-into-multiple-file</a></p>
 
 <h2 id="mapreduce">MapReduce</h2>
@@ -291,7 +292,7 @@ You can use SparkContext by directly initilaztion or use SparkSession.sparkConte
 <p><a href="https://homes.cs.washington.edu/~billhowe/mapreduce_a_major_step_backwards.html">https://homes.cs.washington.edu/~billhowe/mapreduce_a_major_step_backwards.html</a></p>
 
 <blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTM3NjAxODIyXX0=
 --></p>
