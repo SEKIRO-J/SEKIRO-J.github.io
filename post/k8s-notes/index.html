@@ -37,10 +37,11 @@
     <title>Kubernetes Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. Table of Contents:  Basic Terms
- Tools
+    <meta name="description" content="Kubernetes cheatsheet and notes, wrote while learning and working on k8s related projects. Table of Contents:  Basic Terms
  Manifests
- Expose A Servic" />
+ Expose A Service
+ Tools
+ " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -103,8 +104,8 @@
     },
     "headline": "Kubernetes Notes",
     "name": "Kubernetes Notes",
-    "wordCount":  384 ,
-    "timeRequired": "PT2M",
+    "wordCount":  583 ,
+    "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
@@ -215,22 +216,32 @@
       
 
 <p><br><br />
-Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. <br></p>
+Kubernetes cheatsheet and notes, wrote while learning and working on k8s related projects. <br></p>
 
 <h2 id="table-of-contents">Table of Contents:</h2>
 
 <ul>
 <li><a href="#Basic-Terms">Basic Terms</a><br /></li>
-<li><a href="#Tools">Tools</a><br /></li>
 <li><a href="#Manifests">Manifests</a><br /></li>
 <li><a href="#Expose-A-Service">Expose A Service</a><br /></li>
-<li><a href="#Helm">Helm</a><br />
+<li><a href="#Tools">Tools</a><br />
+
+<ul>
+<li><a href="#Kubectl">Kubectl</a><br />
+
+<ul>
+<li><a href="#Helm">Helm</a><br /></li>
+<li><a href="#Kubeadm">Kubeadm</a><br /></li>
+<li><a href="#Minikube">Minikube</a><br />
+<br />
 <br /></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h1 id="basic-terms">Basic Terms</h1>
 
-<pre><code>cluster, context, namespace, node, pods.
+<pre><code>some basic termnologies used by kubernetes
 </code></pre>
 
 <ol>
@@ -240,25 +251,18 @@ Kubernetes cheatsheet and notes, recorded while learning and working on k8s rela
 <li><strong>node</strong>: a virtual/physical machine<br /></li>
 <li><strong>pod</strong>: a set of containers to orchestrate, minimal object to scale<br /></li>
 <li><strong>container</strong>: docker container runs in pod<br /></li>
-<li><strong>chart</strong>: an image of your pod orchestration, that can be deployed. It&rsquo;s like deploying an image with docker.<br /></li>
+<li><strong>chart</strong>: a collect of files that describes your pod orchestration, that can be used to deploy a set of pods.<br /></li>
 <li><strong>Job</strong>: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.<br /></li>
 <li><strong>Service</strong>: a wrapper to pod, one or more pods to perform a service.<br /></li>
-<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.<br /></li>
-<li><strong>Label</strong>: To classify different kind of pods.<br />
+<li><strong>Volumes</strong>: file storage system, lives with node. Can define external volumes on cloud providers, lives with cloud providers.<br /></li>
+<li><strong>Label</strong>: to classify different kind of pods.<br />
+<br />
 <br /></li>
 </ol>
 
-<h1 id="tools">Tools</h1>
-
-<p>kubectl, kubeadmin, minikube, helm<br />
-1. <strong>kubectl</strong>:<br />
-2. <strong>minikube</strong>:<br />
-3. <strong>kubeadmin</strong><br />
-4. <strong>helm</strong>: Manage charts</p>
-
 <h1 id="manifests">Manifests</h1>
 
-<p>manifests usually defined by .yaml or .json file, to manage resources.</p>
+<p>manifests usually defined by .yaml or .json file, to manage (describe) resources.</p>
 
 <pre><code>- Deployment: deploy pods based on spec
 - ReplicaSet: deploy pods as replica 
@@ -266,6 +270,8 @@ Kubernetes cheatsheet and notes, recorded while learning and working on k8s rela
 - HorizontalPodsAutoscaler(HPA): Autoscaler for pods, make sure the resources usage keeps at same level.(50% CPU/Memory Usage)
 - Volume Claim Chain: To better manage a externel volume, to use a volume, must first claim it.
 - Network Policy: Define a network policy to a set of pods(by label) like which set of pods(by label) or users(by namespace) can access.
+- Secret: some secret you don't want others to know: ssh key, username/password
+- Ingress:
 </code></pre>
 
 <h1 id="expose-a-service">Expose A Service</h1>
@@ -278,24 +284,95 @@ Kubernetes cheatsheet and notes, recorded while learning and working on k8s rela
 <p>There are 3 types of manifests to expose a service</p>
 
 <ol>
-<li><p><strong>NodePort</strong>:  Assign the service to a port, access the service by port number. Ex:<code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>, PortNumber is fixed, NodeIP could be any node that the service is running on. pods traffic is balanced in the same node, but not balanced in the different nodes . This is not good for production, but good for local testing by using kube-proxy.</p></li>
+<li><p><strong>NodePort:</strong>  Assign the service to a port, access the service by port number. Ex:<code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>, PortNumber is fixed, NodeIP could be any node that the service is running on. pods traffic is balanced in the same node, but not balanced in the different nodes . This is not good for production, but good for local testing by using kube-proxy.</p></li>
 
-<li><p><strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.</p></li>
+<li><p><strong>LoadBalancer:</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;=</code>to a external load balancer. Node traffic is balanced.</p></li>
 
-<li><p><strong>Ingress</strong> Recommended way for production.</p></li>
+<li><p><strong>Ingress:</strong> Recommended way for production.</p></li>
 </ol>
 
-<h1 id="helm">Helm</h1>
+<h1 id="tools">Tools</h1>
 
-<p>Helm is</p>
+<p>kubectl, kubeadmin, minikube, helm</p>
+
+<ol>
+<li><h2 id="kubectl">Kubectl</h2>
+
+<p><strong>Kubectl</strong> is a user tool to interact with the cluster</p>
+
+<ol>
+<li><p><strong>get info about the cluster (pod, service, deployment, replicaset, statefulset etc):</strong><br><br />
+everything: <code>kubectl get all</code><br />
+pods:   <code>kubectl get pods</code><br />
+nodes:<code>kubectl get nodes</code><br />
+<strong>Note:</strong> can be filtered by namespace or label.</p></li>
+
+<li><p><strong>get logs for a pod:</strong> <br><br />
+usage: <code>kubectl logs -h</code></p></li>
+
+<li><p><strong>forward a request from a port:</strong> <br><br />
+usage: <code>kubectl port-forward -h</code></p></li>
+</ol></li>
+
+<li><h2 id="helm">Helm</h2>
+
+<p><strong>Helm</strong> is like a manager of <code>charts</code>, you can use helm to pull, push, deploy a chart and modify (upgrade) a depolyment.</p>
+
+<ol>
+<li><p><strong>pull  repo from <a href="https://helm.sh/docs/topics/chart_repository/">remote chart repository</a> to local:</strong><br><br />
+<code>helm repo add [repoName] [RepoUrl]</code><br />
+<code>helm update</code></p></li>
+
+<li><p><strong>deploy (install)  chart from local repo:</strong><br><br />
+<code>helm install [repoName]/[chartName] [releaseName]</code><br />
+<strong>[releaseName]</strong> can be auto-generated using <code>--generate-name</code></p></li>
+
+<li><p><strong>upgrade:</strong><br><br />
+&ndash; get  values.yaml of a chart, stores at values.yaml<br />
+<code>helm inspect values [chartName] &gt; newValues.yaml</code><br />
+&ndash; edit the <code>newValues.yaml</code> to describe the upgrade<br />
+&ndash; deploy the upgrade<br />
+<code>helm upgrade [releaseName] [chartName] -f newValues.yaml</code> <br></p></li>
+
+<li><p><strong>clean/remove the release:</strong><br><br />
+<code>helm uninstall [releaseName]</code></p></li>
+</ol></li>
+
+<li><h2 id="kubeadm">Kubeadm</h2>
+
+<p><strong>Kubeadm</strong> is admin tool to setup a cluster</p>
+
+<ol>
+<li><br><br /></li>
+<li><br><br />
+<br />
+<br /></li>
+</ol></li>
+
+<li><h2 id="minikube">Minikube</h2>
+
+<p><strong>Minikube</strong>: setup &amp; run a single node cluster locally for testing and dev purpose.</p>
+
+<ol>
+<li>usage: <code>minikube -h</code><br /></li>
+<li><strong>usual workflow</strong>:<br><br />
+<code>minikube start [computingResourceConfig]</code><br />
+<code>minikube status</code><br />
+<code>minikube stop</code><br />
+<br /></li>
+</ol></li>
+</ol>
 
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwNTE1Njc0MSwtNDExODU1NzA0LDk4ND
-M0MjM1MywyMDI0OTM5MTY1LDE4MTIxMzgwNzgsMTczNTQyNTk4
-OSwtMTMzMzYxMzQ4LC04ODQzMzI2NDEsMTI3MDE0MTYzMSwzOD
-g3NzYyODAsNjQyODc5NDZdfQ==
+eyJoaXN0b3J5IjpbLTE5ODgzNzUzMjEsODg0NTgxMzI5LDU4OD
+E2MzQ4MywxMTM1OTE1MTM3LDM2NDQ0NTgyNSwtMjA1NzM5NDEx
+MCwxNzEyMDE0MjU5LC0xODk3MTIwMzcwLDEyNTU2NjIwMzcsND
+Y5MjM0NTA2LC03MDUxNTY3NDEsLTQxMTg1NTcwNCw5ODQzNDIz
+NTMsMjAyNDkzOTE2NSwxODEyMTM4MDc4LDE3MzU0MjU5ODksLT
+EzMzM2MTM0OCwtODg0MzMyNjQxLDEyNzAxNDE2MzEsMzg4Nzc2
+MjgwXX0=
 --></p>
 </blockquote>
 

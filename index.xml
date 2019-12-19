@@ -17,14 +17,16 @@
       <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/k8s-notes/</guid>
-      <description>Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. Table of Contents:  Basic Terms
- Tools
+      <description>Kubernetes cheatsheet and notes, wrote while learning and working on k8s related projects. Table of Contents:  Basic Terms
  Manifests
  Expose A Service
+ Tools
+ Kubectl
  Helm
-  Basic Terms cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine.
- context: a group of access parameters, a cluster, a namespace, a user.
- namespace: virtual cluster, use to separate resources across different environments like prod, dev, test.</description>
+ Kubeadm
+ Minikube
+    Basic Terms some basic termnologies used by kubernetes   cluster: physical cluster of physical machine.
+ context: a group of access parameters, a cluster, a namespace, a user.</description>
     </item>
     
     <item>
