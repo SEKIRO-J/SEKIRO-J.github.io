@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-05-02T00:00:00Z" />
+    <meta property="article:published_time" content="2019-12-18T00:00:00Z" />
 
     
     
@@ -37,12 +37,10 @@
     <title>Kubernetes Notes &middot; Hello World, This Is J</title>
 
     
-    <meta name="description" content="Table of Contents:
-* Basic Terms
-* Manifests
-* [Expose a service]()
-* [Helm]()
-Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical " />
+    <meta name="description" content="Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. Table of Contents:  Basic Terms
+ Tools
+ Manifests
+ Expose A Servic" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -105,15 +103,15 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
     },
     "headline": "Kubernetes Notes",
     "name": "Kubernetes Notes",
-    "wordCount":  337 ,
+    "wordCount":  384 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "/post/k8s-notes/",
-    "datePublished": "2019-05-02T00:00Z",
-    "dateModified": "2019-05-02T00:00Z",
+    "datePublished": "2019-12-18T00:00Z",
+    "dateModified": "2019-12-18T00:00Z",
     
     
     "description": "",
@@ -205,8 +203,8 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2019-05-02T00:00:00Z">
-            May 2, 2019
+          <time class="post-date" datetime="2019-12-18T00:00:00Z">
+            Dec 18, 2019
           </time>
         
          
@@ -216,13 +214,21 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
     <section class="post-content">
       
 
-<p>Table of Contents:<br />
-* <a href="#Basic-Terms/objects">Basic Terms</a><br />
-* <a href="#Manifests">Manifests</a><br />
-* [Expose a service]()<br />
-* [Helm]()</p>
+<p><br><br />
+Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. <br></p>
 
-<h3 id="basic-terms-objects">Basic Terms/objects</h3>
+<h2 id="table-of-contents">Table of Contents:</h2>
+
+<ul>
+<li><a href="#Basic-Terms">Basic Terms</a><br /></li>
+<li><a href="#Tools">Tools</a><br /></li>
+<li><a href="#Manifests">Manifests</a><br /></li>
+<li><a href="#Expose-A-Service">Expose A Service</a><br /></li>
+<li><a href="#Helm">Helm</a><br />
+<br /></li>
+</ul>
+
+<h1 id="basic-terms">Basic Terms</h1>
 
 <pre><code>cluster, context, namespace, node, pods.
 </code></pre>
@@ -234,18 +240,27 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 <li><strong>node</strong>: a virtual/physical machine<br /></li>
 <li><strong>pod</strong>: a set of containers to orchestrate, minimal object to scale<br /></li>
 <li><strong>container</strong>: docker container runs in pod<br /></li>
+<li><strong>chart</strong>: an image of your pod orchestration, that can be deployed. It&rsquo;s like deploying an image with docker.<br /></li>
 <li><strong>Job</strong>: a wrapper to pod, usually runs a pod that carrying tasks that run only once, like db migration.<br /></li>
 <li><strong>Service</strong>: a wrapper to pod, one or more pods to perform a service.<br /></li>
-<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.<br />
-10.<strong>Label</strong>: To classify different kind of pods.<br />
-<br />
+<li><strong>Volumes</strong>: file storage system, lives with node. Can define externel volumes on cloud providers, lives with cloud providers.<br /></li>
+<li><strong>Label</strong>: To classify different kind of pods.<br />
 <br /></li>
 </ol>
 
-<h3 id="manifests">Manifests</h3>
+<h1 id="tools">Tools</h1>
 
-<pre><code>ususally defined by .yaml or .json file
-- Deployment: deploy pods based on spec
+<p>kubectl, kubeadmin, minikube, helm<br />
+1. <strong>kubectl</strong>:<br />
+2. <strong>minikube</strong>:<br />
+3. <strong>kubeadmin</strong><br />
+4. <strong>helm</strong>: Manage charts</p>
+
+<h1 id="manifests">Manifests</h1>
+
+<p>manifests usually defined by .yaml or .json file, to manage resources.</p>
+
+<pre><code>- Deployment: deploy pods based on spec
 - ReplicaSet: deploy pods as replica 
 - DaemonSet:  deploy pods based on spec, ensure each node get one replica.
 - HorizontalPodsAutoscaler(HPA): Autoscaler for pods, make sure the resources usage keeps at same level.(50% CPU/Memory Usage)
@@ -253,7 +268,7 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 - Network Policy: Define a network policy to a set of pods(by label) like which set of pods(by label) or users(by namespace) can access.
 </code></pre>
 
-<h3 id="expose-access-pod-s-by-service">Expose, Access pod(s) by service</h3>
+<h1 id="expose-a-service">Expose A Service</h1>
 
 <ol>
 <li>Create a <code>Kind:Service</code> yaml, and define which pods your service is using (by using label)<br />
@@ -267,13 +282,22 @@ Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical
 
 <li><p><strong>LoadBalancer</strong> Similar to NodePort, but expose the all <code>&lt;NodeIP&gt;:&lt;PortNumber&gt;</code>to a external load balancer. Node traffic is balanced.</p></li>
 
-<li><p><strong>Ingress</strong> Recommended way for production.<br />
-&gt; Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzM2MTM0OCwtODg0MzMyNjQxLDEyNz
-AxNDE2MzEsMzg4Nzc2MjgwLDY0Mjg3OTQ2XX0=
---></p></li>
+<li><p><strong>Ingress</strong> Recommended way for production.</p></li>
 </ol>
+
+<h1 id="helm">Helm</h1>
+
+<p>Helm is</p>
+
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.<br />
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTcwNTE1Njc0MSwtNDExODU1NzA0LDk4ND
+M0MjM1MywyMDI0OTM5MTY1LDE4MTIxMzgwNzgsMTczNTQyNTk4
+OSwtMTMzMzYxMzQ4LC04ODQzMzI2NDEsMTI3MDE0MTYzMSwzOD
+g3NzYyODAsNjQyODc5NDZdfQ==
+--></p>
+</blockquote>
 
     </section>
 
@@ -348,17 +372,10 @@ AxNDE2MzEsMzg4Nzc2MjgwLDY0Mjg3OTQ2XX0=
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/analysis-of-a-few-models/">
-          <section class="post">
-              <h2>Analysis of a few models</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/post/tcp/">
+      <a class="read-next-story prev" style="no-cover" href="/post/pysparkcheatsheet/">
           <section class="post">
-              <h2>Difference between Multi-Processing, Multi-threading and Coroutine</h2>
+              <h2>Pyspark</h2>
           </section>
       </a>
   

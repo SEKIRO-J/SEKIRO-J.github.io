@@ -6,10 +6,26 @@
     <description>Recent content on Hello World, This Is J</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes Notes</title>
+      <link>/post/k8s-notes/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/k8s-notes/</guid>
+      <description>Kubernetes cheatsheet and notes, recorded while learning and working on k8s related projects. Table of Contents:  Basic Terms
+ Tools
+ Manifests
+ Expose A Service
+ Helm
+  Basic Terms cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine.
+ context: a group of access parameters, a cluster, a namespace, a user.
+ namespace: virtual cluster, use to separate resources across different environments like prod, dev, test.</description>
+    </item>
     
     <item>
       <title>Pyspark</title>
@@ -34,24 +50,6 @@ It&amp;rsquo;s good and simple, however, it has lots of assumptions.
 4. Error term is independent and identically distributed
 5. all independent variables are uncorrelated with the error term
 In brexit referendum data, there are 110 variables, there would be too much computation.</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes Notes</title>
-      <link>/post/k8s-notes/</link>
-      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/k8s-notes/</guid>
-      <description>Table of Contents:
-* Basic Terms
-* Manifests
-* [Expose a service]()
-* [Helm]()
-Basic Terms/objects cluster, context, namespace, node, pods.   cluster: physical cluster of physical machine.
- context: a group of access parameters, a cluster, a namespace, a user.
- namespace: virtual cluster, use to separate resources across different environments like prod, dev, test.
- node: a virtual/physical machine
- pod: a set of containers to orchestrate, minimal object to scale</description>
     </item>
     
     <item>
